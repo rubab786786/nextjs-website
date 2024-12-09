@@ -56,7 +56,7 @@ const Crowdfunding = () => {
               id="w-node-b20495da-9e1a-4309-1784-2bae45394bf5-5b9eef5f"
               className="w-layout-cell cell-53"
             >
-              <Link href="/innovative-investment" className="button-2 w-button">
+              <Link href="/innovative-investment" scroll={false} className="button-2 w-button">
                 Innovative investment
               </Link>
             </div>
@@ -66,6 +66,7 @@ const Crowdfunding = () => {
             >
               <Link
                 href="/crowdfunding"
+                scroll={false}
                 aria-current="page"
                 className="button-2 w-button w--current"
               >
@@ -76,7 +77,7 @@ const Crowdfunding = () => {
               id="w-node-dcc44db1-bfa4-64bf-780a-bb380133036c-5b9eef5f"
               className="w-layout-cell cell-55"
             >
-              <Link href="/assets-tokenization" className="button-2 w-button">
+              <Link href="/assets-tokenization" scroll={false} className="button-2 w-button">
                 Assets
               </Link>
             </div>

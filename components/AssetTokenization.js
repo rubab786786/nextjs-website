@@ -63,7 +63,7 @@ const AssetTokenization = () => {
               id="w-node-_65647434-72a2-7ef5-7099-e318aad56b5f-8c571e6f"
               className="w-layout-cell cell-53"
             >
-              <Link href="/innovative-investment" className="button-2 w-button">
+              <Link href="/innovative-investment" scroll={false} className="button-2 w-button">
                 Innovative investment
               </Link>
             </div>
@@ -71,7 +71,7 @@ const AssetTokenization = () => {
               id="w-node-_65647434-72a2-7ef5-7099-e318aad56b62-8c571e6f"
               className="w-layout-cell cell-54"
             >
-              <Link href="/crowdfunding" className="button-2 w-button">
+              <Link href="/crowdfunding" scroll={false} className="button-2 w-button">
                 Crowdfunding
               </Link>
             </div>
@@ -81,6 +81,7 @@ const AssetTokenization = () => {
             >
               <Link
                 href="/assets-tokenization"
+                scroll={false}
                 aria-current="page"
                 className="button-2 w-button w--current"
               >
