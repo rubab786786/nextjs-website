@@ -68,7 +68,7 @@ const Navbar = () => {
         </section>
       )}
 
-      <nav className="header w-nav" style={{ fontFamily: "Inter, sans-serif" }}>
+      <nav className="header w-nav">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -77,12 +77,12 @@ const Navbar = () => {
             </Link>
 
             {/* Menu (Visible on large screens and centered) */}
-            <div className="hidden lg:flex flex-grow justify-center mt-2 font-medium text-lg ">
-              <ul className="flex space-x-6 items-center">
-                <li>
+            <div className="hidden lg:flex flex-grow justify-center mt-2 font-medium text-lg header-menu-wrapper w-nav-menu">
+              <ul className="flex space-x-6 items-center header-nav-menu-list">
+                <li className='header-nav-list-item-middle'>
                   <Link
                     href="/"
-                    className={`text-black dark:text-white hover:text-[#e83a3d] ${isActive("/") ? "text-[#e83a3d]" : ""
+                    className={`header-nav-link w-nav-link w--current text-black dark:text-white hover:text-[#e83a3d] ${isActive("/") ? "text-[#e83a3d]" : ""
                       }`}
                   >
                     Home
