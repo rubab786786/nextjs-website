@@ -295,7 +295,7 @@ fieldset {
 button,
 [type='button'],
 [type='reset'] {
-  border: 0;
+  border: 2;
   cursor: pointer;
   -webkit-appearance: button;
 }
