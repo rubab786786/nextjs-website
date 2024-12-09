@@ -1,10 +1,16 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
 const ContactUs = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensures the iframe renders only on the client side
+  }, []);
   return (
     <>
       <NavbarSection />
@@ -324,36 +330,24 @@ const ContactUs = () => {
             data-widget-tooltip=""
             style={{ overflow: "hidden" }}
           >
-            <div
-              style={{
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                backgroundColor: "rgb(229, 227, 223)",
-              }}
-            >
-              <div className="gm-err-container">
-                <div className="gm-err-content">
-                  <div className="gm-err-icon" style={{ textAlign: "center" }}>
-                    <img
-                      src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png"
-                      alt=""
-                      draggable="false"
-                      style={{ userSelect: "none" }}
-                    />
-                  </div>
-                  <div className="gm-err-title">Oops! Something went wrong.</div>
-                  <div className="gm-err-message">
-                    This page didn't load Google Maps correctly. See the JavaScript console for technical details.
-                  </div>
-                </div>
-              </div>
+            <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, }}>
+              {isClient && (
+                <iframe
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight="0"
+                  marginWidth="0"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(Actiwires%20LLC%20DBA%20UFUND)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                >
+                  <a href="https://www.gps.ie/">gps trackers</a>
+                </iframe>
+              )}
             </div>
           </div>
         </div>
-      </section >
+      </section>
       <UuiSection />
       <JoinSection />
       <FooterSection />
