@@ -1,5 +1,5 @@
 "use client";
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection';
 import JoinSection from './JoinSection';
@@ -268,17 +268,17 @@ const InnovativeInvestment = () => {
           <h1 className="heading-faq">Faqs</h1>
           <h1 className="heading-faq1">Small business investments</h1>
           <div className="brix---inner-container-1012px-center-2"
-           style={{
-          opacity: isLoaded ? 1 : 0,
-          transform: isLoaded
-            ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
-            : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-        }}>
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transform: isLoaded
+                ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
+                : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+            }}>
             <div className="brix---accordion-v3-card-2">
               <div className="w-layout-grid brix---grid-1-column-gap-row-2">
                 {accordionItems.map((item, index) => (
-                  
+
                   <div
                     key={index}
                     className="brix---accordion-item-wrapper-v3-2"

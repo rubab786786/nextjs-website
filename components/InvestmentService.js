@@ -84,12 +84,12 @@ const InvestmentService = () => {
                     alt=""
                     className="image-65"
                     style={arrowImageStyles}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                      }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
@@ -119,12 +119,12 @@ const InvestmentService = () => {
                     alt=""
                     className="image-65"
                     style={arrowImageStyles}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                      }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
@@ -154,12 +154,12 @@ const InvestmentService = () => {
                     alt=""
                     className="image-65"
                     style={arrowImageStyles}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                      }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
