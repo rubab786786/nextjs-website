@@ -24,12 +24,12 @@ const CounterSection = () => {
             </div>
             <div className="w-layout-cell cell-7">
               <h1 className="counter">
-                <CountUp
+                {/* <CountUp
                   start={0}
                   end={counter.value}
                   duration={2.5} // Duration of the animation (2.5 seconds)
                   delay={0} // No delay
-                />
+                /> */}
               </h1>
               <h1 className="heading-4">{counter.label}</h1>
             </div>
