@@ -16,8 +16,8 @@ const arrowImageStyles = {
 const AboutUs = () => {
   return (
     <>
-    <NavbarSection/>
-    <section id="hero" className="section-7">
+      <NavbarSection />
+      <section id="hero" className="section-7">
         <div className="w-layout-blockcontainer container-9 w-container">
           <h1 className="heading-23">About UFUND</h1>
           <p className="paragraph-17">
@@ -306,12 +306,12 @@ const AboutUs = () => {
                     alt=""
                     className="image-42"
                     style={arrowImageStyles}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                  }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
@@ -367,12 +367,12 @@ const AboutUs = () => {
                     alt=""
                     className="image-42"
                     style={arrowImageStyles}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                  }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
@@ -422,12 +422,12 @@ const AboutUs = () => {
                     alt=""
                     className="image-42"
                     style={arrowImageStyles}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
-                  }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
@@ -452,10 +452,10 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-    <TeamSection/>
-    <JoinSection/>
-    <FooterSection/>
-    <UuiSection/>
+      <TeamSection />
+      <JoinSection />
+      <FooterSection />
+      <UuiSection />
     </>
   )
 }
