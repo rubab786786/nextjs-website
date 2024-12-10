@@ -2,6 +2,20 @@ import React from 'react'
 import Link from 'next/link'
 
 const AboutUsSection = () => {
+  const arrowImageStyles = {
+    animation: 'moveUpDown 1.4s linear infinite', // Apply animation to the image
+  };
+
+  const keyframes = `
+    @keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+  `;
   return (
     <section className="about-us-section">
           <div className="w-layout-blockcontainer about-us-container w-container">
@@ -117,6 +131,7 @@ const AboutUsSection = () => {
                       data-w-id="8895a6ef-a634-d026-c6af-56e8badde872"
                       alt=""
                       className="image-37"
+                      style={arrowImageStyles}
                     />
                   </div>
                 </div>

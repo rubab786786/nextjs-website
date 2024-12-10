@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import NavbarSection from './NavbarSection'
 import FooterSection from './FooterSection'
@@ -5,6 +6,12 @@ import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import TeamSection from './TeamSection'
 import Link from 'next/link'
+
+const arrowImageStyles = {
+  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 0.4s linear', // Smooth transition for hover effect
+};
 
 const AboutUs = () => {
   return (
@@ -298,6 +305,13 @@ const AboutUs = () => {
                     data-w-id="1b70f883-1185-8c07-2c6c-b745aa04f579"
                     alt=""
                     className="image-42"
+                    style={arrowImageStyles}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                  }}
                   />
                 </Link>
               </div>
@@ -352,6 +366,13 @@ const AboutUs = () => {
                     data-w-id="5f0cdc16-77b2-0d93-07f7-aa0c8044713d"
                     alt=""
                     className="image-42"
+                    style={arrowImageStyles}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                  }}
                   />
                 </Link>
               </div>
@@ -400,6 +421,13 @@ const AboutUs = () => {
                     data-w-id="8898104f-76fc-dc01-8335-329d4168416a"
                     alt=""
                     className="image-42"
+                    style={arrowImageStyles}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                  }}
                   />
                 </Link>
               </div>

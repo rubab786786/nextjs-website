@@ -5,6 +5,33 @@ import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
 
+const data = [
+  {
+    imgSrc:"/images/resource1.png",
+    title:"things to avoid with any investment"
+  },
+  {
+    imgSrc:"/images/resource2.png",
+    title:"calculate valuation for your business by ufund"
+  },
+  {
+    imgSrc:"/images/resource3.png",
+    title:"How to value your business using UFND tokenizer"
+  },
+  {
+    imgSrc:"/images/resource4.png",
+    title:"Security tokens offerings (stos)"
+  },
+  {
+    imgSrc:"/images/resource5.png",
+    title:"mastering cryptocurrency investing"
+  },
+  {
+    imgSrc:"/images/resource6.png",
+    title:"Understanding blockchain technology"
+  },
+]
+
 const Resources = () => {
   return (
     <>
@@ -26,7 +53,9 @@ const Resources = () => {
     <div className="w-layout-blockcontainer res-container-copy w-container">
       <div className="w-dyn-list">
         <div role="list" className="w-dyn-items w-row">
+        {data.map((res, index) => (
           <div
+          key={index}
             role="listitem"
             className="collection-item-3 w-dyn-item w-col w-col-6"
           >
@@ -38,21 +67,25 @@ const Resources = () => {
                     loading="lazy"
                     data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
                     alt=""
-                    className="image-62"
+                    className="image-63"
                   />
                 </Link>
                 <img
-                  src="/images/resource1.png"
+                  src={res.imgSrc}
                   loading="lazy"
                   alt=""
+                  className="image-64"
                 />
               </div>
               <div>
-                <h1 className="heading-31">things to avoid with any investment</h1>
+                <h1 className="heading-31">{res.title}</h1>
                 <Link
                   href="#"
                   className="new-button-copy spark-icon-left-button next w-inline-block"
                 >
+                  {/* <div class="spark-small-res w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="86 110 128 152 170 110" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polyline><line x1="128" y1="40" x2="128" y2="152" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line><path d="M216,152v56a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path></svg>
+                    </div> */}
                   <img
                     src="/images/download-1.svg"
                     loading="lazy"
@@ -64,203 +97,16 @@ const Resources = () => {
               </div>
             </div>
           </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-6"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource2.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">calculate valuation for your business by ufund</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-6"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource3.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">How to value your business using UFND tokenizer</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-6"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource4.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">Security tokens offerings (stos)</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-6"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource5.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">mastering cryptocurrency investing</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-6"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource6.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">Understanding blockchain technology</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
+        ))}
         </div>
       </div>
     </div>
     <div className="w-layout-blockcontainer res-container w-container">
       <div className="w-dyn-list">
         <div role="list" className="w-dyn-items w-row">
+        {data.map((res, index) => (
           <div
+          key={index}
             role="listitem"
             className="collection-item-3 w-dyn-item w-col w-col-4"
           >
@@ -276,17 +122,20 @@ const Resources = () => {
                   />
                 </Link>
                 <img
-                  src="/images/resource1.png"
+                  src={res.imgSrc}
                   loading="lazy"
                   alt=""
                 />
               </div>
               <div>
-                <h1 className="heading-31">things to avoid with any investment</h1>
+                <h1 className="heading-31">{res.title}</h1>
                 <Link
                   href="#"
                   className="new-button-copy spark-icon-left-button next w-inline-block"
                 >
+                  {/* <div class="spark-small-res w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="86 110 128 152 170 110" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polyline><line x1="128" y1="40" x2="128" y2="152" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line><path d="M216,152v56a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path></svg>
+                    </div> */}
                   <img
                     src="/images/download-1.svg"
                     loading="lazy"
@@ -298,200 +147,8 @@ const Resources = () => {
               </div>
             </div>
           </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-4"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource2.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">calculate valuation for your business by ufund</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-4"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource3.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">How to value your business using UFND tokenizer</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-4"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource4.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">Security tokens offerings (stos)</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-4"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource5.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">mastering cryptocurrency investing</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div
-            role="listitem"
-            className="collection-item-3 w-dyn-item w-col w-col-4"
-          >
-            <div className="div-block-25">
-              <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
-                  <img
-                    src="/images/Frame-8.png"
-                    loading="lazy"
-                    data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
-                    alt=""
-                    className="image-62"
-                  />
-                </Link>
-                <img
-                  src="/images/resource6.png"
-                  loading="lazy"
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="heading-31">Understanding blockchain technology</h1>
-                <Link
-                  href="#"
-                  className="new-button-copy spark-icon-left-button next w-inline-block"
-                >
-                  <img
-                    src="/images/download-1.svg"
-                    loading="lazy"
-                    alt=""
-                    className="image-68"
-                  />
-                  <p className="spark-button-res">Download </p>
-                </Link>
-              </div>
-            </div>
-          </div>
+        ))}
         </div>
-        {/* <div className="w-dyn-empty">
-          <div>No items found.</div>
-        </div> */}
       </div>
     </div>
   </section>

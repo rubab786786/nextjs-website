@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection';
 import JoinSection from './JoinSection';
@@ -8,6 +8,11 @@ import Link from 'next/link';
 
 const InnovativeInvestment = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 100); // Delay to allow animation on load
+  }, []);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -262,7 +267,14 @@ const InnovativeInvestment = () => {
         <div className="w-layout-blockcontainer container-24 w-container">
           <h1 className="heading-faq">Faqs</h1>
           <h1 className="heading-faq1">Small business investments</h1>
-          <div className="brix---inner-container-1012px-center-2">
+          <div className="brix---inner-container-1012px-center-2"
+           style={{
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded
+            ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
+            : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+          transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+        }}>
             <div className="brix---accordion-v3-card-2">
               <div className="w-layout-grid brix---grid-1-column-gap-row-2">
                 {accordionItems.map((item, index) => (

@@ -77,12 +77,12 @@ const Navbar = () => {
             </Link>
 
             {/* Menu (Visible on large screens and centered) */}
-            <div className="hidden lg:flex flex-grow justify-center mt-2 font-medium text-lg header-menu-wrapper w-nav-menu">
-              <ul className="flex space-x-6 items-center header-nav-menu-list">
-                <li className='header-nav-list-item-middle'>
+            <div className="hidden lg:flex flex-grow justify-center mt-2 font-medium text-lg ">
+              <ul className="flex space-x-6 items-center ">
+                <li>
                   <Link
                     href="/"
-                    className={`header-nav-link w-nav-link w--current text-black dark:text-white hover:text-[#e83a3d] ${isActive("/") ? "text-[#e83a3d]" : ""
+                    className={`header-nav-link w-nav-link text-black dark:text-white hover:text-[#e83a3d] ${isActive("/") ? "text-[#e83a3d]" : ""
                       }`}
                   >
                     Home
@@ -182,7 +182,7 @@ const Navbar = () => {
                     Blog
                   </Link>
                 </li>
-                <li className="header-nav-list-item-middle">
+                <li>
                   <Link
                     href="/contact-us"
                     className={`header-nav-link ${isActive("/contact-us") ? "text-[#e83a3d]" : ""
@@ -268,7 +268,9 @@ const Navbar = () => {
                 <img
                   src="/images/image-1_1.png"
                   loading="lazy"
-                  alt=""
+                  sizes="(max-width: 479px) 100vw, (max-width: 991px) 200.00001525878906px, (max-width: 1279px) 31vw, 220.00001525878906px"
+                srcSet="/images/image-1_1-p-500.png 500w, images/image-1_1-p-800.png 800w, images/image-1_1-p-1080.png 1080w, images/image-1_1-p-1600.png 1600w, images/image-1_1-p-2000.png 2000w, images/image-1_1.png 2048w"
+                alt=""
                   className="image-75"
                 />
               </Link>

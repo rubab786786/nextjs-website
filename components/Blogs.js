@@ -5,7 +5,6 @@ import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
 
-
 const data = [
   {
     blogName: "Tokenized Securities Exchange",
