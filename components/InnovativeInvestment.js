@@ -278,6 +278,7 @@ const InnovativeInvestment = () => {
             <div className="brix---accordion-v3-card-2">
               <div className="w-layout-grid brix---grid-1-column-gap-row-2">
                 {accordionItems.map((item, index) => (
+                  
                   <div
                     key={index}
                     className="brix---accordion-item-wrapper-v3-2"
