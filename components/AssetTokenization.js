@@ -1,5 +1,5 @@
 "use client"
-import React,{ useState,useEffect } from 'react'
+import React, { useState, useEffect, useRef } from "react";
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
@@ -9,9 +9,27 @@ import Link from 'next/link'
 const AssetTokenization = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const sectionRef = useRef(null); // To observe the section
 
   useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 100); // Delay to allow animation on load
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsLoaded(true); // Trigger animation
+        }
+      },
+      { threshold: 0.2 } // Trigger when 30% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const toggleAccordion = (index) => {
@@ -49,8 +67,8 @@ const AssetTokenization = () => {
   ];
   return (
     <>
-    <NavbarSection/>
-    <section id="hero" className="section-in">
+      <NavbarSection />
+      <section id="hero" className="section-in">
         <div className="w-layout-blockcontainer container-i w-container">
           <h1 className="heading-i">Assets</h1>
           <Link href="#" className="button-inv w-button">
@@ -290,12 +308,13 @@ const AssetTokenization = () => {
         <div className="w-layout-blockcontainer container-27 w-container">
           <div
             className="brix---inner-container-1012px-center-3"
-          style={{
+            ref={sectionRef}
+            style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded
-                ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
-                : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+                : "translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+              transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
             }}
           >
             <div className="brix---accordion-v3-card-3">
@@ -312,7 +331,7 @@ const AssetTokenization = () => {
                           alt="Accordion toggle"
                           src="images/Frame-43076-1.png"
                           className={`brix---accordion-arrow-icon-2 ${activeIndex === index ? "rotate-90" : ""
-                          }`}
+                            }`}
                         />
                       </button>
                     </div>
@@ -348,9 +367,9 @@ const AssetTokenization = () => {
           </div>
         </div>
       </section>
-    <UuiSection/>
-    <JoinSection/>
-    <FooterSection/>
+      <UuiSection />
+      <JoinSection />
+      <FooterSection />
     </>
   )
 }

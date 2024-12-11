@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection';
 import JoinSection from './JoinSection';
@@ -9,9 +9,27 @@ import Link from 'next/link';
 const InnovativeInvestment = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const sectionRef = useRef(null); // To observe the section
 
   useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 100); // Delay to allow animation on load
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsLoaded(true); // Trigger animation
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const toggleAccordion = (index) => {
@@ -268,17 +286,17 @@ const InnovativeInvestment = () => {
           <h1 className="heading-faq">Faqs</h1>
           <h1 className="heading-faq1">Small business investments</h1>
           <div className="brix---inner-container-1012px-center-2"
+            ref={sectionRef}
             style={{
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded
-                ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
-                : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+                ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+                : "translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+              transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
             }}>
             <div className="brix---accordion-v3-card-2">
               <div className="w-layout-grid brix---grid-1-column-gap-row-2">
                 {accordionItems.map((item, index) => (
-
                   <div
                     key={index}
                     data-w-id="4915d33e-b6bc-ec7d-03da-7f272e82efc5"
@@ -301,7 +319,6 @@ const InnovativeInvestment = () => {
                           <h3 className="brix---accordion-title-2">{item.question}</h3>
                         </div>
                       </div>
-
                       {activeIndex === index && (
                         <div className="brix---acordion-body-2">
                           <div className="brix---accordion-spacer-2" />
