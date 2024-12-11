@@ -87,22 +87,6 @@ const MakeSection = () => {
                 id="w-node-c45015d8-f93a-6929-9ffc-e882705c7eb9-69ff34fb"
                 className="w-layout-layout quick-stack-17 wf-layout-layout"
               >
-                {/* <div className="w-layout-cell">
-                      <Link
-                        href="https://webapp.ufund.online/login"
-                        target="_blank"
-                        className="w-inline-block"
-                      >
-                        <img
-                          src="/images/Frame-10.png"
-                          loading="lazy"
-                          data-w-id="27463a80-0912-4ac1-4f00-7e9501ebf74d"
-                          alt=""
-                          className="image-66"
-                          style={arrowImageStyles}
-                        />
-                      </Link>
-                    </div> */}
                 <div className="w-layout-cell">
                   <Link
                     href="https://webapp.ufund.online/login"

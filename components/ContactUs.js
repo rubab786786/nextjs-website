@@ -5,6 +5,13 @@ import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
+
+const arrowImageStyles = {
+  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 0.4s linear', // Smooth transition for hover effect
+};
+
 const ContactUs = () => {
   const [isClient, setIsClient] = useState(false);
 
@@ -118,6 +125,13 @@ const ContactUs = () => {
                     alt=""
                     data-w-id="e33a4438-fc45-4c35-0269-53cdf08a9bf4"
                     className="image-38-copy"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -130,6 +144,13 @@ const ContactUs = () => {
                     alt=""
                     data-w-id="e33a4438-fc45-4c35-0269-53cdf08a9bf6"
                     className="image-38-copy"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -143,6 +164,13 @@ const ContactUs = () => {
                     width={22}
                     data-w-id="e33a4438-fc45-4c35-0269-53cdf08a9bf8"
                     className="image-38-copy"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -155,6 +183,13 @@ const ContactUs = () => {
                     alt=""
                     data-w-id="e33a4438-fc45-4c35-0269-53cdf08a9bfa"
                     className="image-38-copy"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
