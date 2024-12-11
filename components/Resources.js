@@ -1,9 +1,16 @@
+"use client"
 import React from 'react'
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
+
+const arrowImageStyles = {
+  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 0.4s linear', // Smooth transition for hover effect
+};
 
 const data = [
   {
@@ -68,6 +75,13 @@ const Resources = () => {
                     data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
                     alt=""
                     className="image-63"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <img
@@ -119,6 +133,13 @@ const Resources = () => {
                     data-w-id="2420bd38-0c3b-30ed-1217-451eda526c63"
                     alt=""
                     className="image-62"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <img
