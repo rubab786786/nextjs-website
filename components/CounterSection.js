@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const CounterSection = () => {
   const counters = [
@@ -10,27 +10,51 @@ const CounterSection = () => {
   ];
 
   const [counts, setCounts] = useState(counters.map(() => 0));
+  const [hasStarted, setHasStarted] = useState(false); // To prevent multiple starts
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    counters.forEach((counter, index) => {
-      const increment = Math.ceil(counter.value / 100); // Adjust the speed
-      const interval = setInterval(() => {
-        setCounts((prevCounts) => {
-          const newCounts = [...prevCounts];
-          if (newCounts[index] < counter.value) {
-            newCounts[index] += increment;
-          } else {
-            newCounts[index] = counter.value;
-            clearInterval(interval);
-          }
-          return newCounts;
-        });
-      }, 25); // Adjust the interval duration (25ms)
-    });
-  }, [counters]);
+    const handleCounterStart = () => {
+      counters.forEach((counter, index) => {
+        const increment = Math.ceil(counter.value / 100);
+        const interval = setInterval(() => {
+          setCounts((prevCounts) => {
+            const newCounts = [...prevCounts];
+            if (newCounts[index] < counter.value) {
+              newCounts[index] += increment;
+            } else {
+              newCounts[index] = counter.value;
+              clearInterval(interval);
+            }
+            return newCounts;
+          });
+        }, 25);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          handleCounterStart();
+          setHasStarted(true); // Prevent running the counter multiple times
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [counters, hasStarted]);
 
   return (
-    <section className="counte-section">
+    <section className="counte-section" ref={sectionRef}>
       <div className="w-layout-blockcontainer counte-conatiner w-container">
         {counters.map((counter, index) => (
           <div
