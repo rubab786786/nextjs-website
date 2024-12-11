@@ -38,7 +38,7 @@ const InnovativeInvestment = () => {
 
   const accordionItems = [
     {
-      question: "Why should I invest in UFUND",
+      question: "Why should I invest in UFUND?",
       answer:
         "UFUND is a decentralized finance (DeFi) with a Tokenizer connected to blockchain that allows investors to create a business investment portfolio with maturity dates and terms that will create a set of returns."
     },
@@ -288,6 +288,7 @@ const InnovativeInvestment = () => {
           <div className="brix---inner-container-1012px-center-2"
             ref={sectionRef}
             style={{
+              width: "100%",
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded
                 ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
@@ -299,7 +300,6 @@ const InnovativeInvestment = () => {
                 {accordionItems.map((item, index) => (
                   <div
                     key={index}
-                    data-w-id="4915d33e-b6bc-ec7d-03da-7f272e82efc5"
                     className="brix---accordion-item-wrapper-v3-2"
                     onClick={() => toggleAccordion(index)}
                   >

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from "react";
 import NavbarSection from "./NavbarSection"
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
@@ -16,6 +16,29 @@ import {
 
 const Post = ({ heading, date }) => {
     const [activeIndex, setActiveIndex] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const sectionRef = useRef(null); // To observe the section
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsLoaded(true); // Trigger animation
+                }
+            },
+            { threshold: 0.2 } // Trigger when 30% of the section is visible
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
 
     const toggleAccordion = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -249,7 +272,16 @@ const Post = ({ heading, date }) => {
                 <div className="w-layout-blockcontainer container-blog-in5 w-container">
                     <h1 className="heading-blog-1">FAQ's</h1>
                     <h1 className="heading-blog-2">Frequently Asked Questions</h1>
-                    <div className="brix---inner-container-1012px-center-2">
+                    <div className="brix---inner-container-1012px-center-2"
+                        ref={sectionRef}
+                        style={{
+                            width: "100%",
+                            opacity: isLoaded ? 1 : 0,
+                            transform: isLoaded
+                                ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
+                                : "translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                            transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
+                        }}>
                         <div className="brix---accordion-v3-card-2">
                             <div className="w-layout-grid brix---grid-1-column-gap-row-2">
                                 {accordionItems.map((item, index) => (
@@ -298,44 +330,44 @@ const Post = ({ heading, date }) => {
                         // data-delay={4000}
                         // data-animation="slide"
                         className="industries_component-2 w-slider"
-                        // data-autoplay="false"
-                        // data-easing="ease"
-                        // data-hide-arrows="false"
-                        // data-disable-swipe="false"
-                        // data-autoplay-limit={0}
-                        // data-nav-spacing={3}
-                        // data-duration={500}
-                        // data-infinite="true"
-                        // role='region'
-                        // aria-label='carousel'
+                    // data-autoplay="false"
+                    // data-easing="ease"
+                    // data-hide-arrows="false"
+                    // data-disable-swipe="false"
+                    // data-autoplay-limit={0}
+                    // data-nav-spacing={3}
+                    // data-duration={500}
+                    // data-infinite="true"
+                    // role='region'
+                    // aria-label='carousel'
                     >
                         {/* <div className="industries_mask new-home news w-slider-mask"> */}
-                            <Carousel >
-                                <CarouselContent>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="Tokenized securities exchange: a new era in investing" image={"/images/blog1.png"} date="3/18/2024" />
-                                    </CarouselItem>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="The future of finance: blockchain investment explained" image={"/images/blog2.png"} date="3/18/2024" />
-                                    </CarouselItem>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="Capital raising strategies: your guide to financial success" image={"/images/blog3.png"} date="3/18/2024" />
-                                    </CarouselItem>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="Demystifying digital securities: your path to modern investment" image={"/images/blog4.png"} date="3/16/2024" />
-                                    </CarouselItem>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="The game-changer: security token platforms in modern finance" image={"/images/blog5.png"} date="3/18/2024" />
-                                    </CarouselItem>
-                                    <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                                        <PostCards heading="Rwa tokenization: navigating the trust path in digital transactions" image={"/images/blog6.png"} date="3/18/2024" />
-                                    </CarouselItem>
-                                </CarouselContent>
-                                <CarouselPrevious />
-                                <CarouselNext />
-                            </Carousel>
+                        <Carousel >
+                            <CarouselContent>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="Tokenized securities exchange: a new era in investing" image={"/images/blog1.png"} date="3/18/2024" />
+                                </CarouselItem>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="The future of finance: blockchain investment explained" image={"/images/blog2.png"} date="3/18/2024" />
+                                </CarouselItem>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="Capital raising strategies: your guide to financial success" image={"/images/blog3.png"} date="3/18/2024" />
+                                </CarouselItem>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="Demystifying digital securities: your path to modern investment" image={"/images/blog4.png"} date="3/16/2024" />
+                                </CarouselItem>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="The game-changer: security token platforms in modern finance" image={"/images/blog5.png"} date="3/18/2024" />
+                                </CarouselItem>
+                                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                                    <PostCards heading="Rwa tokenization: navigating the trust path in digital transactions" image={"/images/blog6.png"} date="3/18/2024" />
+                                </CarouselItem>
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
 
-                            {/* <div aria-live="off" aria-atomic="true" className="w-slider-aria-label" data-wf-ignore="">Slide 5 of 6.</div> */}
+                        {/* <div aria-live="off" aria-atomic="true" className="w-slider-aria-label" data-wf-ignore="">Slide 5 of 6.</div> */}
 
                         {/* </div> */}
                         {/* <div className="industries_arrow left new-home home2 w-slider-arrow-left" role='button' tabIndex={0} aria-controls='w-slider-mask-0' aria-label='previous slide'>

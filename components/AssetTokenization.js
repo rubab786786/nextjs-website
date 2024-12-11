@@ -310,6 +310,7 @@ const AssetTokenization = () => {
             className="brix---inner-container-1012px-center-3"
             ref={sectionRef}
             style={{
+              width: "100%",
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded
                 ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
@@ -317,9 +318,9 @@ const AssetTokenization = () => {
               transition: "opacity 0.5s ease-in-out, transform 0.5s ease-in-out",
             }}
           >
-            <div className="brix---accordion-v3-card-3">
+            <div className="brix---accordion-v3-card-4">
               <h1 className="heading-faq-1">Faqs</h1>
-              <h1 className="heading-faq2-copy">Frequently asked questions</h1>
+              <h1 className="heading-faq2">Frequently asked questions</h1>
               <div className="w-layout-grid brix---grid-1-column-gap-row-3">
                 {accordionItems.map((item, index) => (
                   <div key={index} className="brix---accordion-item-wrapper-v3-3" onClick={() => toggleAccordion(index)}>

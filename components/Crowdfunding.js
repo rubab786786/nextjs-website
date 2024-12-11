@@ -210,6 +210,7 @@ const Crowdfunding = () => {
             className="brix---inner-container-1012px-center-3"
             ref={sectionRef}
             style={{
+              width: "100%",
               opacity: isLoaded ? 1 : 0,
               transform: isLoaded
                 ? "translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)"
@@ -230,7 +231,6 @@ const Crowdfunding = () => {
                         <img
                           alt="Accordion toggle"
                           src="images/Frame-43076-1.png"
-                          // className="brix---accordion-arrow-icon-2"
                           className={`brix---accordion-arrow-icon-2 ${activeIndex === index ? "rotate-90" : ""
                           }`}
                         />
