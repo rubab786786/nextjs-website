@@ -1,5 +1,12 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
+
+const arrowImageStyles = {
+  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 0.4s linear', // Smooth transition for hover effect
+};
 
 const data = [
   {
@@ -83,6 +90,13 @@ const TeamSection = () => {
                           data-w-id="805f2aa7-6b46-4d57-4bde-3643a1390436"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -97,6 +111,13 @@ const TeamSection = () => {
                           data-w-id="40a7746e-eb2d-7602-6b89-ce3109e96850"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -111,6 +132,13 @@ const TeamSection = () => {
                           data-w-id="084dd178-1f80-19e1-4055-22733278b073"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -125,6 +153,13 @@ const TeamSection = () => {
                           data-w-id="02c0d56d-708f-48c1-3c77-252d95058531"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -167,6 +202,13 @@ const TeamSection = () => {
                           data-w-id="805f2aa7-6b46-4d57-4bde-3643a1390436"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -181,6 +223,13 @@ const TeamSection = () => {
                           data-w-id="40a7746e-eb2d-7602-6b89-ce3109e96850"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -195,6 +244,13 @@ const TeamSection = () => {
                           data-w-id="084dd178-1f80-19e1-4055-22733278b073"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>
@@ -209,6 +265,13 @@ const TeamSection = () => {
                           data-w-id="02c0d56d-708f-48c1-3c77-252d95058531"
                           alt=""
                           className="image-67"
+                          style={arrowImageStyles}
+                          onMouseOver={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.1)'; // Enlarge image on hover
+                          }}
+                          onMouseOut={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                          }}
                         />
                       </Link>
                     </div>

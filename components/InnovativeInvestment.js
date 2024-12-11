@@ -281,6 +281,7 @@ const InnovativeInvestment = () => {
 
                   <div
                     key={index}
+                    data-w-id="4915d33e-b6bc-ec7d-03da-7f272e82efc5"
                     className="brix---accordion-item-wrapper-v3-2"
                     onClick={() => toggleAccordion(index)}
                   >

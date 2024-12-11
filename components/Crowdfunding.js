@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
@@ -8,6 +8,11 @@ import FooterSection from './FooterSection'
 import Link from 'next/link';
 const Crowdfunding = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 100); // Delay to allow animation on load
+  }, []);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -186,10 +191,13 @@ const Crowdfunding = () => {
         <div className="w-layout-blockcontainer container-27 w-container">
           <div
             className="brix---inner-container-1012px-center-3"
-          // style={{
-          //   opacity: 0,
-          //   transform: "translate3d(0, 10%, 0) scale3d(1, 1, 1)"
-          // }}
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transform: isLoaded
+                ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
+                : 'translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+              transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+            }}
           >
             <div className="brix---accordion-v3-card-3">
               <h1 className="heading-faq-1">Faqs</h1>

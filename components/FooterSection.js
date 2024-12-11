@@ -1,5 +1,12 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
+
+const arrowImageStyles = {
+  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 0.4s linear', // Smooth transition for hover effect
+};
 
 const FooterSection = () => {
   return (
@@ -49,6 +56,13 @@ const FooterSection = () => {
                     alt=""
                     data-w-id="a98945db-45fd-2cbf-a0f6-acd3982d516f"
                     className="image-38"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -61,6 +75,13 @@ const FooterSection = () => {
                     alt=""
                     data-w-id="a98945db-45fd-2cbf-a0f6-acd3982d5171"
                     className="image-38"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -74,6 +95,13 @@ const FooterSection = () => {
                     width={22}
                     data-w-id="a98945db-45fd-2cbf-a0f6-acd3982d5173"
                     className="image-38"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -86,6 +114,13 @@ const FooterSection = () => {
                     alt=""
                     data-w-id="a98945db-45fd-2cbf-a0f6-acd3982d5175"
                     className="image-38"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
                 <Link
@@ -99,6 +134,13 @@ const FooterSection = () => {
                     width={23}
                     data-w-id="a98945db-45fd-2cbf-a0f6-acd3982d5177"
                     className="image-38-copy"
+                    style={arrowImageStyles}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.2)'; // Enlarge image on hover
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'; // Revert to original size
+                    }}
                   />
                 </Link>
               </div>
