@@ -269,7 +269,7 @@ const Navbar = () => {
                   src="/images/image-1_1.png"
                   loading="lazy"
                   sizes="(max-width: 479px) 100vw, (max-width: 991px) 200.00001525878906px, (max-width: 1279px) 31vw, 220.00001525878906px"
-                srcSet="/images/image-1_1-p-500.png 500w, images/image-1_1-p-800.png 800w, images/image-1_1-p-1080.png 1080w, images/image-1_1-p-1600.png 1600w, images/image-1_1-p-2000.png 2000w, images/image-1_1.png 2048w"
+                srcSet="/images/image-1_1-p-500.png 500w, /images/image-1_1-p-800.png 800w, /images/image-1_1-p-1080.png 1080w, /images/image-1_1-p-1600.png 1600w, /images/image-1_1-p-2000.png 2000w, /images/image-1_1.png 2048w"
                 alt=""
                   className="image-75"
                 />
