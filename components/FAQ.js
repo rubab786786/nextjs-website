@@ -129,7 +129,6 @@ const FAQ = () => {
                       <div className="brix---color-neutral-804">
                         <div className="brix---accordion-big-number">
                         {String(index + 1).padStart(2, '0')} {/* This adds leading zero */}
-
                         </div>
                       </div>
                       <div className="brix---accordion-content-wrapper-v2-3">

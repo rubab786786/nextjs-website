@@ -5473,6 +5473,7 @@
   color: var(--secondary);
   margin-bottom: 10px;
   font-family: Inter, sans-serif;
+  letter-spacing: 0.496px;
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
@@ -5580,6 +5581,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   font-family: Inter, sans-serif;
+  word-spacing: 0.49px;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -5766,6 +5768,7 @@
   color: var(--secondary);
   margin-bottom: 30px;
   font-family: Inter, sans-serif;
+  word-spacing: 0.8px;
   font-size: 18px;
   line-height: 26px;
 }
@@ -5937,6 +5940,7 @@
   color: var(--secondary);
   margin-bottom: 0;
   font-family: Inter, sans-serif;
+  word-spacing: 2px;
   font-size: 18px;
   line-height: 30px;
 }
@@ -13939,9 +13943,11 @@
   }
 
   .paragraph-8 {
-    color: var(--secondary);
+    color: black;
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.38px;
+    letter-spacing: 0.1px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14001,6 +14007,8 @@
     color: var(--color);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.5px;
+    letter-spacing: 0.1px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14018,9 +14026,11 @@
   }
 
   .paragraph-11 {
-    color: var(--secondary);
+    color: black;
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.6px;
+    letter-spacing: 0.2px;
     font-size: 18px;
     line-height: 30px;
   }
