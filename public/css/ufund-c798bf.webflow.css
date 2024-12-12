@@ -6271,6 +6271,8 @@
   width: 65%;
   margin-bottom: 20px;
   font-family: Inter, sans-serif;
+  word-spacing: 0.2px;
+  letter-spacing: 0.2px;
   font-size: 18px;
   line-height: 30px;
 }
@@ -6400,7 +6402,7 @@
 .process-progress {
   z-index: -2;
   background-color: #434343;
-  background-image: url('../images/Vector-987.png');
+  background-image: url('/images/Vector-987.png');
   background-position: 0 0;
   background-size: auto;
   width: 2px;
@@ -9637,6 +9639,8 @@
   width: 100%;
   margin-bottom: 20px;
   font-family: Inter, sans-serif;
+  word-spacing: 0.5px;
+  letter-spacing:0.1px;
   font-size: 18px;
   line-height: 30px;
 }
@@ -12332,6 +12336,7 @@
 .rich-text-block {
   color: var(--secondary);
   font-family: Inter, sans-serif;
+  word-spacing: 1px;
   font-size: 17px;
 }
 
@@ -12348,6 +12353,7 @@
 .rich-text-block-1 {
   color: var(--secondary);
   font-family: Inter, sans-serif;
+  word-spacing: 1px;
   font-size: 17px;
 }
 
@@ -12395,6 +12401,7 @@
 .rich-text-block-2 {
   color: var(--secondary);
   font-family: Inter, sans-serif;
+  word-spacing: 1px;
   font-size: 17px;
 }
 
@@ -14111,6 +14118,8 @@
     color: var(--color);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.39px;
+    letter-spacing: 0.2px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14152,6 +14161,8 @@
 
   .paragraph-23 {
     font-size: 18px;
+    word-spacing: 0.3px;
+    letter-spacing:0.1px;
   }
 
   .res-container {
@@ -14211,6 +14222,7 @@
   .paragraph-24 {
     color: var(--black);
     font-family: Inter, sans-serif;
+    word-spacing: 0.39px;
     font-size: 16px;
     font-weight: 500;
     line-height: 150%;
@@ -14231,6 +14243,7 @@
     color: var(--black);
     text-align: right;
     font-family: Inter, sans-serif;
+    word-spacing: 0.39px;
     font-size: 16px;
     font-weight: 500;
     line-height: 150%;
@@ -14287,6 +14300,8 @@
     color: var(--secondary);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.5px;
+    letter-spacing:0.1px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14299,6 +14314,8 @@
     color: var(--secondary);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.5px;
+    letter-spacing:0.1px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14364,6 +14381,8 @@
     color: var(--secondary);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 0.5px;
+    letter-spacing:0.1px;
     font-size: 18px;
     line-height: 30px;
   }
@@ -14592,6 +14611,8 @@
 
   .paragraph-32 {
     font-size: 16px;
+    word-spacing: 0.1px;
+    letter-spacing:0.1px;
     line-height: 30px;
   }
 
@@ -14681,6 +14702,7 @@
     color: var(--secondary);
     margin-bottom: 20px;
     font-family: Inter, sans-serif;
+    word-spacing: 1px;
     font-size: 18px;
     line-height: 30px;
   }

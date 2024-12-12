@@ -22,7 +22,7 @@ const AboutUs = () => {
           <h1 className="heading-23">About UFUND</h1>
           <p className="paragraph-17">
             Dramatically scale impactful infomediaries before superior schemas.
-            Intrinsically productivity resource-leveling services before
+            Intrinsically<br/> productivity resource-leveling services before
             professional sources.
           </p>
           <Link href="#" className="button w-button">
