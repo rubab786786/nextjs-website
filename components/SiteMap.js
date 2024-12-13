@@ -333,7 +333,7 @@ const SiteMap = () => {
       </ul>
     </div>
   </section>
-    <JoinSection/>
+    <JoinSection heading="Start your journey today"/>
     <FooterSection/>
     </>
   )

@@ -379,7 +379,7 @@ const Post = ({ heading, date }) => {
                     </div>
                 </div>
             </section>
-            <JoinSection />
+            <JoinSection heading="Start your journey today"/>
             <FooterSection />
         </>
     )

@@ -61,7 +61,7 @@ const Disclaimer = () => {
       </p>
     </div>
   </section>
-    <JoinSection/>
+    <JoinSection heading="Start your journey today"/>
     <FooterSection/>
     </>
   )

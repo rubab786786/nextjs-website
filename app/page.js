@@ -24,7 +24,7 @@ export default function HomePage() {
         <MakeSection />
         <TeamSection />
         <UuiSection />
-        <JoinSection />
+        <JoinSection heading="Start your journey today"/>
         <FooterSection />
       </main>
     </>

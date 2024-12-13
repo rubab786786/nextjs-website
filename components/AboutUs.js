@@ -453,7 +453,7 @@ const AboutUs = () => {
         </div>
       </section>
       <TeamSection />
-      <JoinSection />
+      <JoinSection heading="Start your journey today"/>
       <FooterSection />
       <UuiSection />
     </>

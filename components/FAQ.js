@@ -215,7 +215,7 @@ const FAQ = () => {
           </Link>
         </div>
       </section>
-      <JoinSection />
+      <JoinSection heading="Buy UFD tokens" />
       <UuiSection />
       <FooterSection />
     </>

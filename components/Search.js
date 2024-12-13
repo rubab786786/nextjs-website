@@ -25,7 +25,7 @@ const Search = () => {
       </div>
     </div>
   </section>
-  <JoinSection/>
+  <JoinSection heading="Start your journey today"/>
   <FooterSection/>
     </>
   )

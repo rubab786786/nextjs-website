@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const JoinSection = () => {
+const JoinSection = ({heading}) => {
   const arrowImageStyles = {
     animation: 'moveUpDown 1.4s linear infinite', // Apply animation to the image
   };
@@ -53,7 +53,7 @@ const JoinSection = () => {
               target="_blank"
               className="spark-button-2 spark-icon-left-button next w-inline-block"
             >
-              <p className="paragraph-5">Start your journey today</p>
+              <p className="paragraph-5">{heading}</p>
               <div className="html-embed-6 w-embed">
                 <svg
                   width="100%"

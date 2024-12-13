@@ -269,7 +269,7 @@ const Crowdfunding = () => {
         </div>
       </section>
       <UuiSection />
-      <JoinSection />
+      <JoinSection heading="Start your journey today"/>
       <FooterSection />
     </>
   )
