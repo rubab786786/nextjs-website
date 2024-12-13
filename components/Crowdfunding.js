@@ -232,7 +232,7 @@ const Crowdfunding = () => {
                           alt="Accordion toggle"
                           src="images/Frame-43076-1.png"
                           className={`brix---accordion-arrow-icon-2 ${activeIndex === index ? "rotate-90" : ""
-                          }`}
+                            }`}
                         />
                       </button>
                     </div>

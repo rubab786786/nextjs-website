@@ -3,16 +3,18 @@ import Link from 'next/link'
 
 const AboutUsSection = () => {
   const arrowImageStyles = {
-    animation: 'moveUpDown 1.4s linear infinite', // Apply animation to the image
+    animation: 'moveUpDownBottom 1.3s linear infinite', // Apply bottom animation to the image
+    transformStyle: 'preserve-3d',
+    willChange: 'transform',
   };
 
   const keyframes = `
     @keyframes moveUpDown {
       0%, 100% {
-        transform: translateY(0);
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       }
       50% {
-        transform: translateY(-4px);
+        transform: translate3d(0px, 2px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       }
     }
   `;

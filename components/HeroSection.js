@@ -2,8 +2,14 @@ import Link from 'next/link';
 import React from 'react';
 
 const HeroSection = () => {
-  const arrowImageStyles = {
+  const arrowImageStylesTop = {
     animation: 'moveUpDown 1.4s linear infinite', // Apply animation to the image
+  };
+
+  const arrowImageStylesBottom = {
+    animation: 'moveUpDownBottom 1.3s linear infinite', // Apply bottom animation to the image
+    transformStyle: 'preserve-3d',
+    willChange: 'transform',
   };
 
   const keyframes = `
@@ -13,6 +19,15 @@ const HeroSection = () => {
       }
       50% {
         transform: translateY(-4px);
+      }
+    }
+
+    @keyframes moveUpDownBottom {
+      0%, 100% {
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      }
+      50% {
+        transform: translate3d(0px, 1.8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
       }
     }
   `;
@@ -69,7 +84,7 @@ const HeroSection = () => {
                 loading="lazy"
                 alt="Arrow animation"
                 className="image-3-copy"
-                style={arrowImageStyles} // Apply animation to this image
+                style={arrowImageStylesTop} // Apply bottom animation to this image
               />
             </div>
           </div>
@@ -82,7 +97,7 @@ const HeroSection = () => {
               loading="lazy"
               alt=""
               className="image-29"
-              style={arrowImageStyles}
+              style={arrowImageStylesBottom} // Apply top animation to this image
             />
             <img
               src="/images/Rectangle-783-1.jpg"

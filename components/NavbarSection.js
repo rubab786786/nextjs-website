@@ -42,7 +42,7 @@ const Navbar = () => {
                 src="/images/65c1ffabd8b160b194ad1167_—Pngtree—.png"
                 alt="Close"
                 width={32}
-              data-w-id="8271c643-aea5-b0fe-9930-42b39c5e7cd9"
+                data-w-id="8271c643-aea5-b0fe-9930-42b39c5e7cd9"
                 className="image-popup-close"
                 onClick={togglePopup} // Close popup
               />
@@ -161,7 +161,7 @@ const Navbar = () => {
                     className={`header-nav-link ${isActive("/investor-guide") ? "text-[#e83a3d]" : ""
                       }`}
                   >
-                    Investor <br /> Guide
+                    Investor Guide
                   </Link>
                 </li>
                 <li>
@@ -269,9 +269,13 @@ const Navbar = () => {
                   src="/images/image-1_1.png"
                   loading="lazy"
                   sizes="(max-width: 479px) 100vw, (max-width: 991px) 200.00001525878906px, (max-width: 1279px) 31vw, 220.00001525878906px"
-                srcSet="/images/image-1_1-p-500.png 500w, /images/image-1_1-p-800.png 800w, /images/image-1_1-p-1080.png 1080w, /images/image-1_1-p-1600.png 1600w, /images/image-1_1-p-2000.png 2000w, /images/image-1_1.png 2048w"
-                alt=""
+                  srcSet="/images/image-1_1-p-500.png 500w, /images/image-1_1-p-800.png 800w, /images/image-1_1-p-1080.png 1080w, /images/image-1_1-p-1600.png 1600w, /images/image-1_1-p-2000.png 2000w, /images/image-1_1.png 2048w"
+                  alt=""
                   className="image-75"
+                  style={{
+                    width: "220px",
+                    height: "44px"
+                  }}
                 />
               </Link>
             </div>
