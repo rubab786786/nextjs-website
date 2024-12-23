@@ -259,7 +259,7 @@ const Navbar = () => {
                         </g>
                       </svg>
                     </div> */}
-                    <img src='/images/lock.png' className='mr-2' />
+                    <img src='/images/Lock.png' className='mr-2' />
                     <p className="paragraph-5">Buy UFD tokens</p>
                   </Link>
                   {/* <a
