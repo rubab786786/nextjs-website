@@ -173,7 +173,7 @@ const Post = ({ heading, date }) => {
                             className="w-layout-cell cell-67"
                         >
                             <div className="rich-text-block w-richtext" >
-                                <h3 style={{marginBottom:"10px"}}>End-to-End Trust Path: The Holy Grail of RWA Tokenization Security</h3>
+                                <h3 style={{ marginBottom: "10px" }}>End-to-End Trust Path: The Holy Grail of RWA Tokenization Security</h3>
                                 <p>The security of Real World Asset tokenization hinges on establishing an end-to-end trust path between the real world and the blockchain. Ensuring security at every step of the tokenization process, including buying, selling, and trading, is vital to prevent attacks that could devalue the tokens. Yet, achieving this security property is no easy feat, especially when dealing with the complex interaction between computing systems and the real world.</p>
                                 <p>Consider the challenge of establishing trust between commodity computing systems and human users. Securing the final step of the trust path requires rare and secure hardware, highlighting the intricacies of achieving end-to-end trust in modern computing systems.</p>
                             </div>
@@ -191,7 +191,7 @@ const Post = ({ heading, date }) => {
                         </div>
                     </div>
                     <div className="rich-text-block-1 w-richtext" >
-                        <h3 style={{marginBottom:"10px"}}>Bridging Trust Gaps in Digital Transactions</h3>
+                        <h3 style={{ marginBottom: "10px" }}>Bridging Trust Gaps in Digital Transactions</h3>
                         <p>Real World Asset tokenization involves multiple parties, including token issuers, custodians of real-world assets, and token users. A trust gap arises between the digital and physical realms at each interaction. The strength of the Real World Asset tokenization process is only as robust as the weakest link among these parties and their interactions.</p>
                     </div>
                 </div>
@@ -253,17 +253,17 @@ const Post = ({ heading, date }) => {
                         </div>
                     </div>
                     <div className="rich-text-block-2 w-richtext" >
-                        <h3 style={{marginBottom:"10px"}}>Technologies to Bridge the Trust Gap</h3>
+                        <h3 style={{ marginBottom: "10px" }}>Technologies to Bridge the Trust Gap</h3>
                         <p>Several technologies aim to bridge the trust gap between the digital and physical worlds in Real World Asset tokenization. The most prominent solution involves using oracles, acting as trusted entities that vouch for the integrity of real-world assets on the blockchain. However, relying solely on oracles introduces vulnerabilities, emphasizing the need for secure solutions.</p>
                         <p>Trusted Execution Environment (TEE) - based oracles emerge as a promising approach. TEE provides a secure execution environment, isolating software from the rest of the computing system. By using hardware-based TEEs, the trust base narrows down to the hardware and the Oracle software, minimizing the potential attack surface.</p>
-                        <h3 style={{marginBottom:"10px"}}>Real-Object Authentication: An Intriguing Approach</h3>
+                        <h3 style={{ marginBottom: "10px" }}>Real-Object Authentication: An Intriguing Approach</h3>
                         <p>Another avenue to bridge the trust gap involves leveraging real-world object authenticity. Two approaches stand out: measuring intrinsic properties of objects for authentication and inscribing unique keys into real-world objects. These methods hold promise but are still in their early stages of development.</p>
-                        <h3 style={{marginBottom:"10px"}}>Institutional Trust: An Interim Solution</h3>
+                        <h3 style={{ marginBottom: "10px" }}>Institutional Trust: An Interim Solution</h3>
                         <p>In the absence of mature technologies, many Real World Asset tokenization projects rely on institutional trust to bridge the gap between blockchain and the real world. Institutions must be trustworthy throughout the trust path for this interim solution to be effective, and each step must undergo rigorous security evaluations. Stakeholders and users must also be informed of their reliance on institutional trust.</p>
                         <p>Consider the example of the gold-pegged Coin ($GPC) on the Klaytn blockchain. This initiative utilizes the Korea Gold Exchange to back its tokenized gold, which is executed through trustless smart contracts audited by reputable web3 security firms. While institutional trust is a temporary solution, it requires consistent monitoring and upholding of trustworthiness for a secure RWA ecosystem.</p>
-                        <h3 style={{marginBottom:"10px"}}>What If Trust Breaks?</h3>
+                        <h3 style={{ marginBottom: "10px" }}>What If Trust Breaks?</h3>
                         <p>Institutional trust serves as an interim solution, but its failure at any point could lead to a security gap between perception and reality. Traditional institutions aren't the sole trust bridge, as demonstrated by platforms like Elysia, which incorporates a DAO for decentralized governance, adding an extra layer of trust.</p>
-                        <h3 style={{marginBottom:"10px"}}>UFUND: Revolutionizing Funding</h3>
+                        <h3 style={{ marginBottom: "10px" }}>UFUND: Revolutionizing Funding</h3>
                         <p>As the landscape of Real World Asset tokenization continues to evolve, innovative projects like UFUND are emerging to revolutionize funding. UFUND introduces a fresh perspective to the world of decentralized finance (DeFi) by combining security and innovation. While details about UFUND are beyond the scope of this article, it's worth keeping an eye on projects that aim to reshape traditional funding models through blockchain technology.</p>
                     </div>
                 </div>
@@ -366,20 +366,10 @@ const Post = ({ heading, date }) => {
                             <CarouselPrevious />
                             <CarouselNext />
                         </Carousel>
-
-                        {/* <div aria-live="off" aria-atomic="true" className="w-slider-aria-label" data-wf-ignore="">Slide 5 of 6.</div> */}
-
-                        {/* </div> */}
-                        {/* <div className="industries_arrow left new-home home2 w-slider-arrow-left" role='button' tabIndex={0} aria-controls='w-slider-mask-0' aria-label='previous slide'>
-                            <img src="/images/Frame-5.svg" loading="lazy" alt="" />
-                        </div>
-                        <div className="industries_arrow new-home home2 w-slider-arrow-right" role='button' tabIndex={0} aria-controls='w-slider-mask-0' aria-label='next slide'>
-                            <img src="/images/Frame-6.svg" loading="lazy" alt="" />
-                        </div> */}
                     </div>
                 </div>
             </section>
-            <JoinSection heading="Start your journey today"/>
+            <JoinSection heading="Start your journey today" />
             <FooterSection />
         </>
     )

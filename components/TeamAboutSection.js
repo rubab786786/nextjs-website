@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import AvailableSection from './AvailableSection';
 
 const arrowImageStyles = {
   transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
@@ -278,7 +277,6 @@ const TeamSection = () => {
             ))}
           </div>
         </div>
-        <AvailableSection/>
       </div>
     </section>
   )

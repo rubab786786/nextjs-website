@@ -37,7 +37,24 @@ const MakeSection = () => {
                 campaigners Fiat funds into regulated third party custody. Asset’s
                 tokenization is backed by blockchain with a bright future ahead!
               </p>
-              <Link
+              <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
+
+              {/* <Link
                 href="https://webapp.ufund.online/login"
                 target="_blank"
                 className="spark-button-3 spark-icon-left-button next w-inline-block"
@@ -67,7 +84,7 @@ const MakeSection = () => {
                     />
                   </svg>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div

@@ -4,7 +4,7 @@ import NavbarSection from './NavbarSection'
 import FooterSection from './FooterSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
-import TeamSection from './TeamSection'
+import TeamAboutSection from './TeamAboutSection'
 import Link from 'next/link'
 
 const arrowImageStyles = {
@@ -88,7 +88,12 @@ const AboutUs = () => {
               className="w-layout-cell"
             >
               <div className="div-block-32">
-                <h1 className="heading-1-copy">2019</h1>
+                <h1 className="heading-1-copy" 
+                style={{
+                  fontSize:"65px",
+                  fontWeight:700,
+                  lineHeight:"100%",
+                }}>2019</h1>
                 <h1 className="heading-35">Company Started</h1>
               </div>
               <div className="div-block-31" />
@@ -290,9 +295,7 @@ const AboutUs = () => {
                 className="w-layout-cell cell-35"
               >
                 <h1 className="heading-27">
-                  Become an
-                  <br />
-                  investor
+                  Become an investor
                 </h1>
                 <Link
                   href="https://webapp.ufund.online/login"
@@ -351,8 +354,7 @@ const AboutUs = () => {
                 className="w-layout-cell cell-36"
               >
                 <h1 className="heading-27">
-                  Become a<br />
-                  business
+                  Become a business
                   <br />
                   campaigner
                 </h1>
@@ -452,7 +454,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      <TeamSection />
+      <TeamAboutSection/>
       <JoinSection heading="Start your journey today"/>
       <FooterSection />
       <UuiSection />

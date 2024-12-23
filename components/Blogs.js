@@ -59,7 +59,7 @@ const data = [
 const Blogs = () => {
   return (
     <>
-    
+
       <NavbarSection />
       <section id="hero" className="section-blog">
         <div className="w-layout-blockcontainer container-blog w-container">
@@ -144,142 +144,142 @@ const Blogs = () => {
           </div>
           <div className="collection-list-wrapper-3 jetboost-list-wrapper-lxem jetboost-list-wrapper-n37m w-dyn-list">
             <div role="list" className="w-dyn-items w-row">
-            {data.map((blog, index) => (
-              <div
-              key={index}
-                role="listitem"
-                className="collection-item-4 w-dyn-item w-col w-col-4"
-              >
-                <div className="div-block-40">
-                  <Link href={blog.detailLink} className="w-inline-block">
-                    <img
-                      src={blog.imgSrc}
-                      loading="lazy"
-                      alt={blog.blogName}
-                      className="image-74"
-                    />
-                  </Link>
-                  <div className="div-block-43">
-                    <div className="blog-date">
-                      <div className="blog-icon">
-                        <img src="/images/calendar.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="blog-text">
-                        <div className="blog-p">{blog.date}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="div-block-42">
-                    <div
-                      id="w-node-d8de2702-69f1-d717-37ff-417a4c89b135-d819f88c"
-                      className="w-layout-layout quick-stack-41 wf-layout-layout"
-                    >
-                      <div className="w-layout-cell cell-62">
-                        <h1 className="heading-47">by {blog.author}</h1>
-                      </div>
-                      <div className="w-layout-cell cell-61">
-                        <div className="div-block-41" />
-                      </div>
-                    </div>
-                    <Link href={blog.detailLink} className="link-block-17 w-inline-block">
-                      <h1 className="heading-48" >{blog.blogTitle}</h1>
-                    </Link>
-                    <Link
-                     href={blog.detailLink}
-                      className="new-button-blog spark-icon-left-button next w-inline-block"
-                    >
-                      <p className="spark-button-text-blog">Learn more</p>
+              {data.map((blog, index) => (
+                <div
+                  key={index}
+                  role="listitem"
+                  className="collection-item-4 w-dyn-item w-col w-col-4"
+                >
+                  <div className="div-block-40">
+                    <Link href={blog.detailLink} className="w-inline-block">
                       <img
-                        src="/images/Vector-2.svg"
+                        src={blog.imgSrc}
                         loading="lazy"
-                        alt=""
-                        className="image-blog"
+                        alt={blog.blogName}
+                        className="image-74"
                       />
                     </Link>
+                    <div className="div-block-43">
+                      <div className="blog-date">
+                        <div className="blog-icon">
+                          <img src="/images/calendar.svg" loading="lazy" alt="" />
+                        </div>
+                        <div className="blog-text">
+                          <div className="blog-p">{blog.date}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="div-block-42">
+                      <div
+                        id="w-node-d8de2702-69f1-d717-37ff-417a4c89b135-d819f88c"
+                        className="w-layout-layout quick-stack-41 wf-layout-layout"
+                      >
+                        <div className="w-layout-cell cell-62">
+                          <h1 className="heading-47">by {blog.author}</h1>
+                        </div>
+                        <div className="w-layout-cell cell-61">
+                          <div className="div-block-41" />
+                        </div>
+                      </div>
+                      <Link href={blog.detailLink} className="link-block-17 w-inline-block">
+                        <h1 className="heading-48" >{blog.blogTitle}</h1>
+                      </Link>
+                      <Link
+                        href={blog.detailLink}
+                        className="new-button-blog spark-icon-left-button next w-inline-block"
+                      >
+                        <p className="spark-button-text-blog">Learn more</p>
+                        <img
+                          src="/images/Vector-2.svg"
+                          loading="lazy"
+                          alt=""
+                          className="image-blog"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="w-embed">
+                    <input
+                      type="hidden"
+                      className="jetboost-list-item"
+                      defaultValue="tokenized-securities-exchange-a-new-era-in-investing"
+                    />
                   </div>
                 </div>
-                <div className="w-embed">
-                  <input
-                    type="hidden"
-                    className="jetboost-list-item"
-                    defaultValue="tokenized-securities-exchange-a-new-era-in-investing"
-                  />
-                </div>
-              </div>
               ))}
             </div>
           </div>
           <div className="collection-list-wrapper-2 jetboost-list-wrapper-lxem jetboost-list-wrapper-n37m w-dyn-list">
             <div role="list" className="w-dyn-items w-row">
-            {data.map((blog, index) => (
-              <div
-              key={index}
-                role="listitem"
-                className="collection-item-4 w-dyn-item w-col w-col-6"
-              >
-                <div className="div-block-40">
-                  <Link href={blog.detailLink} className="w-inline-block">
-                    <img
-                      src={blog.imgSrc}
-                      loading="lazy"
-                      alt={blog.blogName}
-                      className="image-74"
-                    />
-                  </Link>
-                  <div className="div-block-43">
-                    <div className="blog-date">
-                      <div className="blog-icon">
-                        <img src="/images/calendar.svg" loading="lazy" alt="" />
-                      </div>
-                      <div className="blog-text">
-                        <div className="blog-p">{blog.date}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="div-block-42">
-                    <div
-                      id="w-node-d8de2702-69f1-d717-37ff-417a4c89b135-d819f88c"
-                      className="w-layout-layout quick-stack-41 wf-layout-layout"
-                    >
-                      <div className="w-layout-cell cell-62">
-                        <h1 className="heading-47">by {blog.author}</h1>
-                      </div>
-                      <div className="w-layout-cell cell-61">
-                        <div className="div-block-41" />
-                      </div>
-                    </div>
-                    <Link href={blog.detailLink} className="link-block-17 w-inline-block">
-                      <h1 className="heading-48" >{blog.blogTitle}</h1>
-                    </Link>
-                    <Link
-                     href={blog.detailLink}
-                      className="new-button-blog spark-icon-left-button next w-inline-block"
-                    >
-                      <p className="spark-button-text-blog">Learn more</p>
+              {data.map((blog, index) => (
+                <div
+                  key={index}
+                  role="listitem"
+                  className="collection-item-4 w-dyn-item w-col w-col-6"
+                >
+                  <div className="div-block-40">
+                    <Link href={blog.detailLink} className="w-inline-block">
                       <img
-                        src="/images/Vector-2.svg"
+                        src={blog.imgSrc}
                         loading="lazy"
-                        alt=""
-                        className="image-blog"
+                        alt={blog.blogName}
+                        className="image-74"
                       />
                     </Link>
+                    <div className="div-block-43">
+                      <div className="blog-date">
+                        <div className="blog-icon">
+                          <img src="/images/calendar.svg" loading="lazy" alt="" />
+                        </div>
+                        <div className="blog-text">
+                          <div className="blog-p">{blog.date}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="div-block-42">
+                      <div
+                        id="w-node-d8de2702-69f1-d717-37ff-417a4c89b135-d819f88c"
+                        className="w-layout-layout quick-stack-41 wf-layout-layout"
+                      >
+                        <div className="w-layout-cell cell-62">
+                          <h1 className="heading-47">by {blog.author}</h1>
+                        </div>
+                        <div className="w-layout-cell cell-61">
+                          <div className="div-block-41" />
+                        </div>
+                      </div>
+                      <Link href={blog.detailLink} className="link-block-17 w-inline-block">
+                        <h1 className="heading-48" >{blog.blogTitle}</h1>
+                      </Link>
+                      <Link
+                        href={blog.detailLink}
+                        className="new-button-blog spark-icon-left-button next w-inline-block"
+                      >
+                        <p className="spark-button-text-blog">Learn more</p>
+                        <img
+                          src="/images/Vector-2.svg"
+                          loading="lazy"
+                          alt=""
+                          className="image-blog"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="w-embed">
+                    <input
+                      type="hidden"
+                      className="jetboost-list-item"
+                      defaultValue="tokenized-securities-exchange-a-new-era-in-investing"
+                    />
                   </div>
                 </div>
-                <div className="w-embed">
-                  <input
-                    type="hidden"
-                    className="jetboost-list-item"
-                    defaultValue="tokenized-securities-exchange-a-new-era-in-investing"
-                  />
-                </div>
-              </div>
               ))}
             </div>
           </div>
         </div>
       </section>
       <UuiSection />
-      <JoinSection heading="Start your journey today"/>
+      <JoinSection heading="Start your journey today" />
       <FooterSection />
     </>
   )

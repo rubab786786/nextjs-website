@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Navbar = () => {
   const router = useRouter();
@@ -69,7 +70,7 @@ const Navbar = () => {
       )}
 
       <nav className="header w-nav">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="header-container w-container">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="header-logo-link w-nav-brand w--current">
@@ -104,9 +105,10 @@ const Navbar = () => {
                         </div>
                       </Link>
                       {/* Arrow Icon */}
-                      <div className="nav-dropdown-icon-3 w-icon-dropdown-toggle" style={{ marginLeft: "8px" }}>
-                        {/* Up or Down Arrow based on state */}
+                      <div className="nav-dropdown-icon-3" style={{ marginLeft: "8px" }}>
+                        <i className={`fas fa-caret-${isAboutOpen ? "up" : "down"}`}></i>
                       </div>
+
                     </div>
                     {isAboutOpen && (
                       <nav className="nav-dropdown-list-3 shadow-three mobile-shadow-hide" style={{ position: "absolute", top: "100%", left: 0 }}>
@@ -136,8 +138,8 @@ const Navbar = () => {
                         </div>
                       </Link>
                       {/* Arrow Icon */}
-                      <div className="nav-dropdown-icon-3 w-icon-dropdown-toggle" style={{ marginLeft: "8px" }}>
-                        {/* Up or Down Arrow based on state */}
+                      <div className="nav-dropdown-icon-3" style={{ marginLeft: "8px" }}>
+                        <i className={`fas fa-caret-${isServicesOpen ? "up" : "down"}`}></i>
                       </div>
                     </div>
                     {isServicesOpen && (
@@ -231,9 +233,10 @@ const Navbar = () => {
                   <Link
                     href="https://www.tokensales.ufund.online/"
                     data-w-id="5951afa9-511e-d27d-ce27-04ac94802e78"
-                    className="spark-button-header spark-icon-left-button next w-inline-block"
+                    className="flex justify-center items-center bg-gradient-to-r from-[#841524] to-[#e83a3d] text-white hover:bg-gradient-to-l transition duration-300"
+                    style={{ color: "white", borderRadius: "4px", padding: "18px 40px" }}
                   >
-                    <div className="html-embed-8 w-embed">
+                    {/* <div className="html-embed-8 w-embed">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -255,12 +258,21 @@ const Navbar = () => {
                           />
                         </g>
                       </svg>
-                    </div>
+                    </div> */}
+                    <img src='/images/lock.png' className='mr-2' />
                     <p className="paragraph-5">Buy UFD tokens</p>
                   </Link>
+                  {/* <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    className="bg-gradient-to-r from-[#841524] to-[#e83a3d] text-white hover:bg-gradient-to-l transition duration-300"
+                    style={{ color: "white", borderRadius: "4px", padding: "17px 23px" }}
+                  >
+                    Buy UFD tokens
+                  </a> */}
                 </div>
               </div>
-              <Link
+              {/* <Link
                 href="https://www.mintme.com/token/UFUND/MINTME/trade"
                 target="_blank"
                 className="w-inline-block"
@@ -277,7 +289,7 @@ const Navbar = () => {
                     height: "44px"
                   }}
                 />
-              </Link>
+              </Link> */}
             </div>
           </div>
 

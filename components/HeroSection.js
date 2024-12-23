@@ -51,9 +51,11 @@ const HeroSection = () => {
             <div className="div-block">
               <Link
                 href="https://www.tokensales.ufund.online/"
-                className="spark-button-2 spark-icon-left-button next w-inline-block"
+                data-w-id="5951afa9-511e-d27d-ce27-04ac94802e78"
+                className="flex justify-center items-center bg-gradient-to-r from-[#841524] to-[#e83a3d] text-white hover:bg-gradient-to-l transition duration-300"
+                style={{ color: "white", borderRadius: "4px", padding: "18px 40px",margin:"0 0 20px 0" }}
               >
-                <p className="paragraph-5">Buy UFD tokens</p>
+                <p className="paragraph-5 mr-2">Buy UFD tokens</p>
                 <div className="html-embed-2 w-embed">
                   <svg
                     width="100%"

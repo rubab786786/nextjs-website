@@ -70,7 +70,7 @@ const NewsMedia = () => {
               Continually underwhelm sustainable sources after long-term
               high-impact action items. Compellingly syndicate.
             </p>
-            <Link
+            {/* <Link
               href="https://webapp.ufund.online/login"
               target="_blank"
               className="spark-button-3 spark-icon-left-button next w-inline-block"
@@ -100,7 +100,23 @@ const NewsMedia = () => {
                   />
                 </svg>
               </div>
-            </Link>
+            </Link> */}
+            <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -130,7 +146,23 @@ const NewsMedia = () => {
               Continually underwhelm sustainable sources after long-term
               high-impact action items. Compellingly syndicate.
             </p>
-            <Link
+            <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
+            {/* <Link
               href="https://webapp.ufund.online/login"
               target="_blank"
               className="spark-button-3 spark-icon-left-button next w-inline-block"
@@ -160,7 +192,7 @@ const NewsMedia = () => {
                   />
                 </svg>
               </div>
-            </Link>
+            </Link> */}
           </div>
           <div
             id="w-node-fecfe02e-13cd-d3be-5e6e-64f19a48651c-fd8ec5ec"
@@ -190,7 +222,7 @@ const NewsMedia = () => {
               src="/images/Rectangle-7222-2.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 623px) 85vw, (max-width: 767px) 530px, (max-width: 1279px) 350.0000305175781px, 450.0000305175781px"
-              srcSet="/images/Rectangle-7222-2-p-500.png 500w, images/Rectangle-7222-2.png 530w"
+              srcSet="/images/Rectangle-7222-2-p-500.png 500w,/images/Rectangle-7222-2.png 530w"
               alt=""
               className="image-73"
             />
@@ -215,7 +247,23 @@ const NewsMedia = () => {
               Continually underwhelm sustainable sources after long-term
               high-impact action items. Compellingly syndicate.
             </p>
-            <Link
+            <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
+            {/* <Link
               href="https://webapp.ufund.online/login"
               target="_blank"
               className="spark-button-3 spark-icon-left-button next w-inline-block"
@@ -245,7 +293,7 @@ const NewsMedia = () => {
                   />
                 </svg>
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

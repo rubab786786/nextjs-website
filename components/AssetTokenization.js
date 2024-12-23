@@ -133,7 +133,23 @@ const AssetTokenization = () => {
                 individuals to tokenize valuable assets. UFUND helps businesses and
                 individuals to tokenize fungible, non-fungible and tradable assets.
               </p>
-              <Link
+              <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
+              {/* <Link
                 href="https://webapp.ufund.online/login"
                 target="_blank"
                 className="spark-button-i spark-icon-left-button next w-inline-block"
@@ -163,7 +179,7 @@ const AssetTokenization = () => {
                     />
                   </svg>
                 </div>
-              </Link>
+              </Link> */}
             </div>
             <div
               id="w-node-_55292270-9ceb-1c64-4f72-870ed3739a8b-8c571e6f"

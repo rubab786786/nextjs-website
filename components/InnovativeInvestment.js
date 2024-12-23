@@ -132,7 +132,23 @@ const InnovativeInvestment = () => {
                 your portfolio, where you control your investments and P2P trades
                 from a simple, yet powerful dashboard.
               </p>
-              <Link
+              <div className="downloadButton">
+                <div className="tab_button_outer active">
+                  <a
+                    href="https://webapp.ufund.online/login"
+                    target="_blank"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "bold",
+                      textDecoration: "none", // Optional: To remove the underline
+                    }}
+                  >
+                    Discover more
+                    <img src="/images/Frames.png" alt="Download" />
+                  </a>
+                </div>
+              </div>
+              {/* <Link
                 href="https://webapp.ufund.online/login"
                 target="_blank"
                 className="spark-button-3 spark-icon-left-button next w-inline-block"
@@ -162,7 +178,7 @@ const InnovativeInvestment = () => {
                     />
                   </svg>
                 </div>
-              </Link>
+              </Link> */}
             </div>
             <div
               id="w-node-_91b3e497-05e0-b4b0-b4f9-a04cf51556f4-1dedbcfb"
@@ -283,7 +299,7 @@ const InnovativeInvestment = () => {
       </section>
       <section className="section-19">
         <div className="w-layout-blockcontainer container-24 w-container">
-          <h1 className="heading-faq">Faqs</h1>
+          <h1 className="heading-faq">FAQs</h1>
           <h1 className="heading-faq1">Small business investments</h1>
           <div className="brix---inner-container-1012px-center-2"
             ref={sectionRef}

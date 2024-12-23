@@ -46,10 +46,12 @@ const SupplySection = () => {
                   businesses and sustainable returns to investors. To know more,
                 </p>
                 <Link
-                  href="#download-app"
-                  className="spark-button-2-copy spark-icon-left-button next w-inline-block"
+                   href="#download-app"
+                   data-w-id="5951afa9-511e-d27d-ce27-04ac94802e78"
+                   className="flex justify-center items-center bg-gradient-to-r from-[#841524] to-[#e83a3d] text-white hover:bg-gradient-to-l transition duration-300"
+                   style={{ color: "white", borderRadius: "4px", padding: "18px 40px",margin:"0 0 20px 0" }}
                 >
-                  <p className="paragraph-5">Download Our App</p>
+                  <p className="paragraph-5 mr-2">Download Our App</p>
                   <div className="html-embed-4 w-embed">
                     <svg
                       width="100%"
