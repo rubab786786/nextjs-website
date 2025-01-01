@@ -1,11 +1,11 @@
 import React from "react";
-// import {
-//   Box,
-//   Button,
-//   CircularProgress,
-//   TextField,
-//   InputAdornment,
-// } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  TextField,
+  InputAdornment,
+} from "@mui/material";
 
 export default function FormExistingUserIndividual({
   handleEmailVerification,

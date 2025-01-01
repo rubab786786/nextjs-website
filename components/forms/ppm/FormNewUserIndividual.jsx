@@ -1,17 +1,17 @@
 import React from "react";
-// import {
-//   Box,
-//   Button,
-//   Checkbox,
-//   FormControl,
-//   FormControlLabel,
-//   Grid,
-//   InputAdornment,
-//   MenuItem,
-//   Select,
-//   TextField,
-//   Typography,
-// } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  InputAdornment,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 export default function FormNewUserIndividual({
   errors,
