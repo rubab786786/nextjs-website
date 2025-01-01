@@ -12,7 +12,7 @@ export default function RegulationSModal({ isVisible, handleClose, modalName }) 
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
     >
-      <DialogTitle id="modal-title" sx={{ backgroundColor: 'white', color: 'black',fontWeight:700 }}>
+      <DialogTitle id="modal-title" sx={{ backgroundColor: 'white', color: 'black', fontWeight: 700 }}>
         Request to Get Regulation S
       </DialogTitle>
 
@@ -20,7 +20,7 @@ export default function RegulationSModal({ isVisible, handleClose, modalName }) 
         {/* <Typography variant="body1" color="textSecondary" gutterBottom>
           Fill out the form below to request the Regulation S document.
         </Typography> */}
-        <LinearProgress variant="determinate" value={progress} color="error" sx={{height:"10px",borderRadius:"5px",marginTop:"15px" }} />
+        <LinearProgress variant="determinate" value={progress} color="error" sx={{ height: "10px", borderRadius: "5px", marginTop: "15px" }} />
         <InvestorGuideForm setFormProgress={setProgress} guideName="regulation-s" />
       </DialogContent>
 
