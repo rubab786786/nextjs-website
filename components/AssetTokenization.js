@@ -335,7 +335,7 @@ const AssetTokenization = () => {
             }}
           >
             <div className="brix---accordion-v3-card-4">
-              <h1 className="heading-faq-1">Faqs</h1>
+              <h1 className="heading-faq-1">FAQs</h1>
               <h1 className="heading-faq2">Frequently asked questions</h1>
               <div className="w-layout-grid brix---grid-1-column-gap-row-3">
                 {accordionItems.map((item, index) => (

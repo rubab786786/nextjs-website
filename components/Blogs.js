@@ -1,62 +1,103 @@
+"use client"
 import React from 'react'
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../app/firebaseConfig";
 
-const data = [
-  {
-    blogName: "Tokenized Securities Exchange",
-    detailLink: "/post/tokenized-securities-exchange-a-new-era-in-investing",
-    blogTitle: "Tokenized securities exchange: a new era in investing",
-    imgSrc: "/images/blog1.png",
-    date: "3/18/24",
-    author: "UFUND",
-  },
-  {
-    blogName: "The Future of Finance",
-    detailLink: "/post/the-future-of-finance-blockchain-investment-explained",
-    blogTitle: "The future of finance: blockchain investment explained",
-    imgSrc: "/images/blog2.png",
-    date: "3/18/24",
-    author: "UFUND",
-  },
-  {
-    blogName: "Capital Raising Strategies",
-    detailLink: "/post/capital-raising-strategies-your-guide-to-financial-success",
-    blogTitle: "Capital raising strategies: your guide to financial success",
-    imgSrc: "/images/blog3.png",
-    date: "3/22/24",
-    author: "UFUND",
-  },
-  {
-    blogName: "Demystifying Digital Securities",
-    detailLink: "/post/demystifying-digital-securities-your-path-to-modern-investment",
-    blogTitle: "Demystifying digital securities: your path to modern investment",
-    imgSrc: "/images/blog4.png",
-    date: "3/16/24",
-    author: "UFUND",
-  },
-  {
-    blogName: "The Game-Changer",
-    detailLink: "/post/the-game-changer-security-token-platforms-in-modern-finance",
-    blogTitle: "The game-changer: security token platforms in modern finance",
-    imgSrc: "/images/blog5.png",
-    date: "3/16/24",
-    author: "UFUND",
-  },
-  {
-    blogName: "Rwa Tokenization",
-    detailLink: "/post/rwa-tokenization-navigating-the-trust-path-in-digital-transactions",
-    blogTitle: "Rwa tokenization: navigating the trust path in digital transactions",
-    imgSrc: "/images/blog6.png",
-    date: "3/18/24",
-    author: "UFUND",
-  },
-];
+// const data = [
+//   {
+//     blogName: "Tokenized Securities Exchange",
+//     detailLink: "/post/tokenized-securities-exchange-a-new-era-in-investing",
+//     blogTitle: "Tokenized securities exchange: a new era in investing",
+//     imgSrc: "/images/blog1.png",
+//     date: "3/18/24",
+//     author: "UFUND",
+//   },
+//   {
+//     blogName: "The Future of Finance",
+//     detailLink: "/post/the-future-of-finance-blockchain-investment-explained",
+//     blogTitle: "The future of finance: blockchain investment explained",
+//     imgSrc: "/images/blog2.png",
+//     date: "3/18/24",
+//     author: "UFUND",
+//   },
+//   {
+//     blogName: "Capital Raising Strategies",
+//     detailLink: "/post/capital-raising-strategies-your-guide-to-financial-success",
+//     blogTitle: "Capital raising strategies: your guide to financial success",
+//     imgSrc: "/images/blog3.png",
+//     date: "3/22/24",
+//     author: "UFUND",
+//   },
+//   {
+//     blogName: "Demystifying Digital Securities",
+//     detailLink: "/post/demystifying-digital-securities-your-path-to-modern-investment",
+//     blogTitle: "Demystifying digital securities: your path to modern investment",
+//     imgSrc: "/images/blog4.png",
+//     date: "3/16/24",
+//     author: "UFUND",
+//   },
+//   {
+//     blogName: "The Game-Changer",
+//     detailLink: "/post/the-game-changer-security-token-platforms-in-modern-finance",
+//     blogTitle: "The game-changer: security token platforms in modern finance",
+//     imgSrc: "/images/blog5.png",
+//     date: "3/16/24",
+//     author: "UFUND",
+//   },
+//   {
+//     blogName: "Rwa Tokenization",
+//     detailLink: "/post/rwa-tokenization-navigating-the-trust-path-in-digital-transactions",
+//     blogTitle: "Rwa tokenization: navigating the trust path in digital transactions",
+//     imgSrc: "/images/blog6.png",
+//     date: "3/18/24",
+//     author: "UFUND",
+//   },
+// ];
 
 const Blogs = () => {
+  const [blogs, setBlogs] = useState([]); // Store blog data
+  const [loading, setLoading] = useState(true); // Loading state
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true); // Start loading
+        const q = query(collection(db, "posts"), orderBy("publishDate")); // Firestore query
+        const postSnap = await getDocs(q); // Fetch posts
+
+        const filteredPosts = postSnap.docs
+          .map((post) => ({
+            id: post.id,
+            slug: post.get("slug"),
+            title: post.get("title"),
+            coverImageAlt: post.get("coverImageAlt"),
+            imgSrc: post.get("IndexImage"), // Assuming this corresponds to IndexImage
+            publishDate: post.get("publishDate"),
+            detailLink: `/blogs/${post.get("slug")}`, // Generate detail link dynamically
+          }))
+        // .sort(custom_sort)
+        // .reverse(); // Sort and reverse
+
+        setBlogs(filteredPosts); // Set the data
+        setLoading(false); // End loading
+      } catch (error) {
+        console.error("Error fetching blogs: ", error);
+        setLoading(false); // End loading even if there's an error
+      }
+    };
+
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+
   return (
     <>
 
@@ -143,19 +184,26 @@ const Blogs = () => {
             </div>
           </div>
           <div className="collection-list-wrapper-3 jetboost-list-wrapper-lxem jetboost-list-wrapper-n37m w-dyn-list">
-            <div role="list" className="w-dyn-items w-row">
-              {data.map((blog, index) => (
+            <div role="list" className="w-dyn-items w-row"
+              style={{
+                display: "flex",
+                rowGap: "20px",
+                flexWrap: "wrap",
+              }}
+            >
+              {blogs.map((blog) => (
                 <div
-                  key={index}
+                  key={blog.id}
                   role="listitem"
                   className="collection-item-4 w-dyn-item w-col w-col-4"
+                  style={{ height: "unset" }}
                 >
                   <div className="div-block-40">
                     <Link href={blog.detailLink} className="w-inline-block">
                       <img
                         src={blog.imgSrc}
                         loading="lazy"
-                        alt={blog.blogName}
+                        alt={blog.coverImageAlt || "Blog Image"}
                         className="image-74"
                       />
                     </Link>
@@ -165,7 +213,7 @@ const Blogs = () => {
                           <img src="/images/calendar.svg" loading="lazy" alt="" />
                         </div>
                         <div className="blog-text">
-                          <div className="blog-p">{blog.date}</div>
+                          <div className="blog-p">{blog.publishDate}</div>
                         </div>
                       </div>
                     </div>
@@ -175,14 +223,14 @@ const Blogs = () => {
                         className="w-layout-layout quick-stack-41 wf-layout-layout"
                       >
                         <div className="w-layout-cell cell-62">
-                          <h1 className="heading-47">by {blog.author}</h1>
+                          <h1 className="heading-47">by UFUND</h1>
                         </div>
                         <div className="w-layout-cell cell-61">
                           <div className="div-block-41" />
                         </div>
                       </div>
                       <Link href={blog.detailLink} className="link-block-17 w-inline-block">
-                        <h1 className="heading-48" >{blog.blogTitle}</h1>
+                        <h1 className="heading-48" >{blog.title}</h1>
                       </Link>
                       <Link
                         href={blog.detailLink}
@@ -210,6 +258,80 @@ const Blogs = () => {
             </div>
           </div>
           <div className="collection-list-wrapper-2 jetboost-list-wrapper-lxem jetboost-list-wrapper-n37m w-dyn-list">
+            <div role="list" className="w-dyn-items w-row"
+              style={{
+                display: "flex",
+                rowGap: "20px",
+                flexWrap: "wrap",
+              }}
+            >
+              {blogs.map((blog) => (
+                <div
+                  key={blog.id}
+                  role="listitem"
+                  className="collection-item-4 w-dyn-item w-col w-col-6"
+                  style={{ height: "unset" }}
+                >
+                  <div className="div-block-40">
+                    <Link href={blog.detailLink} className="w-inline-block">
+                      <img
+                        src="/images/blog1.png"
+                        loading="lazy"
+                        alt={blog.coverImageAlt || "Blog Image"}
+                        className="image-74"
+                      />
+                    </Link>
+                    <div className="div-block-43">
+                      <div className="blog-date">
+                        <div className="blog-icon">
+                          <img src="/images/calendar.svg" loading="lazy" alt="" />
+                        </div>
+                        <div className="blog-text">
+                          <div className="blog-p">{blog.publishDate}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="div-block-42">
+                      <div
+                        id="w-node-d8de2702-69f1-d717-37ff-417a4c89b135-d819f88c"
+                        className="w-layout-layout quick-stack-41 wf-layout-layout"
+                      >
+                        <div className="w-layout-cell cell-62">
+                          <h1 className="heading-47">by UFUND</h1>
+                        </div>
+                        <div className="w-layout-cell cell-61">
+                          <div className="div-block-41" />
+                        </div>
+                      </div>
+                      <Link href={blog.detailLink} className="link-block-17 w-inline-block">
+                        <h1 className="heading-48" >{blog.title}</h1>
+                      </Link>
+                      <Link
+                        href={blog.detailLink}
+                        className="new-button-blog spark-icon-left-button next w-inline-block"
+                      >
+                        <p className="spark-button-text-blog">Learn more</p>
+                        <img
+                          src="/images/Vector-2.svg"
+                          loading="lazy"
+                          alt=""
+                          className="image-blog"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="w-embed">
+                    <input
+                      type="hidden"
+                      className="jetboost-list-item"
+                      defaultValue="tokenized-securities-exchange-a-new-era-in-investing"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* <div className="collection-list-wrapper-2 jetboost-list-wrapper-lxem jetboost-list-wrapper-n37m w-dyn-list">
             <div role="list" className="w-dyn-items w-row">
               {data.map((blog, index) => (
                 <div
@@ -275,7 +397,7 @@ const Blogs = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <UuiSection />

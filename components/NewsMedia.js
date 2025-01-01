@@ -1,11 +1,37 @@
+"use client"
 import React from 'react'
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../app/firebaseConfig";
 
 const NewsMedia = () => {
+  const [news, setNews] = useState([]); // Store blog data
+    const [loading, setLoading] = useState(true); // Loading state
+  
+    useEffect(() => {
+      const fetchNews = async () => {
+        try {
+          setLoading(true); // Start loading
+          const querySnapshot = await getDocs(collection(db, "news")); // Firestore query
+          const newsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          setNews(newsData); // Set the data
+          setLoading(false); // End loading
+        } catch (error) {
+          console.error("Error fetching news: ", error);
+          setLoading(false); // End loading even if there's an error
+        }
+      };
+  
+      fetchNews();
+    }, []); // Runs on component mount
+  
+    if (loading) return <p>Loading...</p>;
+  
   return (
     <>
     <NavbarSection/>
@@ -28,13 +54,14 @@ const NewsMedia = () => {
         src="/images/Rectangle-7220-7-1.png"
         loading="lazy"
         sizes="(max-width: 479px) 100vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 77vw, 1010.0000610351562px"
-        srcSet="/images/Rectangle-7220-7-1-p-500.png 500w, images/Rectangle-7220-7-1-p-800.png 800w, images/Rectangle-7220-7-1.png 1170w"
+        srcSet="/images/Rectangle-7220-7-1-p-500.png 500w, /images/Rectangle-7220-7-1-p-800.png 800w, /images/Rectangle-7220-7-1.png 1170w"
         alt=""
         className="image-news"
       />
     </div>
     <div className="w-layout-blockcontainer container-news2 w-container">
-      <div className="div-block-37">
+    {news.map((newItem, index) => (
+      <div key={index} className="div-block-37">
         <div
           id="w-node-_291f991a-2bea-0cc0-a85e-c79ad50fede0-fd8ec5ec"
           className="w-layout-layout quick-stack-39 wf-layout-layout"
@@ -46,7 +73,7 @@ const NewsMedia = () => {
             <img
               src="/images/Rectangle-7223-1.png"
               loading="lazy"
-              alt=""
+              alt={newItem.news_name}
               className="image-71"
             />
           </div>
@@ -63,7 +90,7 @@ const NewsMedia = () => {
               </div>
             </div>
             <h1 className="heading-46">
-              UFUND Private Token Sales is live - Limited Period Offer
+            {newItem.news_name}
             </h1>
             <p className="paragraph-32">
               Credibly fashion user friendly platforms via end-to-end sources.
@@ -104,7 +131,7 @@ const NewsMedia = () => {
             <div className="downloadButton">
                 <div className="tab_button_outer active">
                   <a
-                    href="https://webapp.ufund.online/login"
+                    href={newItem.news_link}
                     target="_blank"
                     style={{
                       fontSize: "18px",
@@ -120,7 +147,8 @@ const NewsMedia = () => {
           </div>
         </div>
       </div>
-      <div className="div-block-38">
+    ))}
+      {/* <div className="div-block-38">
         <div
           id="w-node-fecfe02e-13cd-d3be-5e6e-64f19a486519-fd8ec5ec"
           className="w-layout-layout quick-stack-40 wf-layout-layout"
@@ -162,37 +190,7 @@ const NewsMedia = () => {
                   </a>
                 </div>
               </div>
-            {/* <Link
-              href="https://webapp.ufund.online/login"
-              target="_blank"
-              className="spark-button-3 spark-icon-left-button next w-inline-block"
-            >
-              <p className="paragraph-16">Discover more</p>
-              <div className="html-embed-3 w-embed">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
-                    fill="currentColor"
-                    fillOpacity="0.94"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L12.7071 19.7071C12.3166 20.0976 11.6834 20.0976 11.2929 19.7071C10.9024 19.3166 10.9024 18.6834 11.2929 18.2929L17.5858 12L11.2929 5.70711C10.9024 5.31658 10.9024 4.68342 11.2929 4.29289Z"
-                    fill="currentColor"
-                    fillOpacity="0.94"
-                  />
-                </svg>
-              </div>
-            </Link> */}
+            
           </div>
           <div
             id="w-node-fecfe02e-13cd-d3be-5e6e-64f19a48651c-fd8ec5ec"
@@ -202,7 +200,7 @@ const NewsMedia = () => {
               src="/images/Rectangle-7221-2.png"
               loading="lazy"
               sizes="(max-width: 479px) 100vw, (max-width: 623px) 85vw, (max-width: 767px) 530px, (max-width: 1279px) 350.0000305175781px, 450.0000305175781px"
-              srcSet="/images/Rectangle-7221-2-p-500.png 500w, images/Rectangle-7221-2.png 530w"
+              srcSet="/images/Rectangle-7221-2-p-500.png 500w, /images/Rectangle-7221-2.png 530w"
               alt=""
               className="image-72"
             />
@@ -263,40 +261,10 @@ const NewsMedia = () => {
                   </a>
                 </div>
               </div>
-            {/* <Link
-              href="https://webapp.ufund.online/login"
-              target="_blank"
-              className="spark-button-3 spark-icon-left-button next w-inline-block"
-            >
-              <p className="paragraph-16">Discover more</p>
-              <div className="html-embed-3 w-embed">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
-                    fill="currentColor"
-                    fillOpacity="0.94"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M11.2929 4.29289C11.6834 3.90237 12.3166 3.90237 12.7071 4.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L12.7071 19.7071C12.3166 20.0976 11.6834 20.0976 11.2929 19.7071C10.9024 19.3166 10.9024 18.6834 11.2929 18.2929L17.5858 12L11.2929 5.70711C10.9024 5.31658 10.9024 4.68342 11.2929 4.29289Z"
-                    fill="currentColor"
-                    fillOpacity="0.94"
-                  />
-                </svg>
-              </div>
-            </Link> */}
+            
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   </section>
     <UuiSection/>

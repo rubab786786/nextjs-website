@@ -1,5 +1,8 @@
 "use client"
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { getDocs, query, collection } from 'firebase/firestore'
+import { db } from '../app/firebaseConfig';
 import NavbarSection from './NavbarSection'
 import UuiSection from './UuiSection'
 import JoinSection from './JoinSection'
@@ -12,34 +15,49 @@ const arrowImageStyles = {
   transition: 'transform 0.4s linear', // Smooth transition for hover effect
 };
 
-const data = [
-  {
-    imgSrc:"/images/resource1.png",
-    title:"things to avoid with any investment"
-  },
-  {
-    imgSrc:"/images/resource2.png",
-    title:"calculate valuation for your business by ufund"
-  },
-  {
-    imgSrc:"/images/resource3.png",
-    title:"How to value your business using UFND tokenizer"
-  },
-  {
-    imgSrc:"/images/resource4.png",
-    title:"Security tokens offerings (stos)"
-  },
-  {
-    imgSrc:"/images/resource5.png",
-    title:"mastering cryptocurrency investing"
-  },
-  {
-    imgSrc:"/images/resource6.png",
-    title:"Understanding blockchain technology"
-  },
-]
-
+// const data = [
+//   {
+//     imgSrc:"/images/resource1.png",
+//     title:"things to avoid with any investment"
+//   },
+//   {
+//     imgSrc:"/images/resource2.png",
+//     title:"calculate valuation for your business by ufund"
+//   },
+//   {
+//     imgSrc:"/images/resource3.png",
+//     title:"How to value your business using UFND tokenizer"
+//   },
+//   {
+//     imgSrc:"/images/resource4.png",
+//     title:"Security tokens offerings (stos)"
+//   },
+//   {
+//     imgSrc:"/images/resource5.png",
+//     title:"mastering cryptocurrency investing"
+//   },
+//   {
+//     imgSrc:"/images/resource6.png",
+//     title:"Understanding blockchain technology"
+//   },
+// ]
+export const getResources = async () => {
+  const snapshot = await getDocs(query(collection(db, 'resources')));
+  return snapshot.docs.map(dataSnap => dataSnap.data());
+};
 const Resources = () => {
+  const [resources, setResources] = useState([]); // Initialize state for resources
+
+  // Fetch data using useEffect
+  useEffect(() => {
+    const fetchResources = async () => {
+      const data = await getResources();
+      setResources(data); // Set the fetched data to state
+    };
+    
+    fetchResources(); // Call the function to fetch the data
+  }, []); // Empty array ensures it runs once when the component mounts
+
   return (
     <>
     <NavbarSection/>
@@ -60,7 +78,7 @@ const Resources = () => {
     <div className="w-layout-blockcontainer res-container-copy w-container">
       <div className="w-dyn-list">
         <div role="list" className="w-dyn-items w-row">
-        {data.map((res, index) => (
+        {resources.map((res, index) => (
           <div
           key={index}
             role="listitem"
@@ -85,16 +103,16 @@ const Resources = () => {
                   />
                 </Link>
                 <img
-                  src={res.imgSrc}
+                  src={res.image}
                   loading="lazy"
                   alt=""
                   className="image-64"
                 />
               </div>
               <div>
-                <h1 className="heading-31">{res.title}</h1>
+                <h1 className="heading-31">{res.pageDescription}</h1>
                 <Link
-                  href="#"
+                  href={res.downloadUrl}
                   className="new-button-copy spark-icon-left-button next w-inline-block"
                 >
                   {/* <div class="spark-small-res w-embed">
@@ -117,16 +135,24 @@ const Resources = () => {
     </div>
     <div className="w-layout-blockcontainer res-container w-container">
       <div className="w-dyn-list">
-        <div role="list" className="w-dyn-items w-row">
-        {data.map((res, index) => (
+        <div role="list" className="w-dyn-items w-row"
+         style={{
+          display: "flex",
+          rowGap: "20px",
+          flexWrap: "wrap",
+        }}>
+        {resources.map((res, index) => (
           <div
           key={index}
             role="listitem"
             className="collection-item-3 w-dyn-item w-col w-col-4"
+            style={{ height: "unset" }}
           >
-            <div className="div-block-25">
+            <div className="div-block-25"
+            style={{height:"auto"}}>
               <div className="div-block-24">
-                <Link href="#" className="link-block-9 w-inline-block">
+                <Link href={res.downloadUrl} className="link-block-9 w-inline-block"
+                style={{width: "40px"}}>
                   <img
                     src="/images/Frame-8.png"
                     loading="lazy"
@@ -143,15 +169,16 @@ const Resources = () => {
                   />
                 </Link>
                 <img
-                  src={res.imgSrc}
+                  src={res.image}
                   loading="lazy"
                   alt=""
+                  style={{width: "calc(100% - 40px)"}}
                 />
               </div>
               <div>
-                <h1 className="heading-31">{res.title}</h1>
+                <h1 className="heading-31">{res.pageDescription}</h1>
                 <Link
-                  href="#"
+                  href={res.downloadUrl}
                   className="new-button-copy spark-icon-left-button next w-inline-block"
                 >
                   {/* <div class="spark-small-res w-embed">

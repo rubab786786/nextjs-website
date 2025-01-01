@@ -1,78 +1,104 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import NavbarSection from './NavbarSection'
 import JoinSection from './JoinSection'
 import UuiSection from './UuiSection'
 import FooterSection from './FooterSection'
 import Link from 'next/link'
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../app/firebaseConfig";
+
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null); // Tracks which question is open
 
   const toggleAnswer = (index) => {
     setActiveIndex(activeIndex === index ? null : index); // Toggle the active index
   };
+  const [faqs, setFaqs] = useState([]); // Store blog data
+  const [loading, setLoading] = useState(true); // Loading state
 
-  const accordionItems = [
-    {
-      question: "Who are the customers or clients paying for these services?",
-      answer:
-        "Accredited investors .Broker dealers .Financial institutions.Wealthy individuals.VC's.Angel investors . Any foreign investors that passes AML /KYC criteria to buy UFD Reg S to trade it only outside the USA."
-    },
-    {
-      question: "How a business can create a security token and run an STO ( Security Token Offering )",
-      answer:
-        "There are several ways to do it 1-Use UFUND services from a to Z . 2-Do it yourself under UFUND guide line. Undergo KYC /AML. Get approved. Thereafter start filling the application form. Give your token the required details for the smart & sales contracts. Provide images and asset (s) audit. Thereafter you need to : -Decide what rights the security token will grant the investors. _Choose the jurisdiction to operate in -Choose UFUND as security token issuance platform -Create the token -Run your security token offering -list your security token on UFUND platform or third party exchanges. To know more contact us at : support@ufund.online"
-    },
-    {
-      question: "How does it work?",
-      answer:
-        "Visit :https://web.ufund.online there is a video explainer : https://youtu.be/GHDYTCVnujE. All you need to do is enroll to create a portfolio as an investor or campaigner."
-    },
-    {
-      question: "What is the difference between a security token and a utility token?",
-      answer: "UFD utility token allows owners access to the company's product or services offered on the platform and mobile apps only such as discounts, rewards, or additional benefits to token holders, while a UFD security token entitle owners to hold a stake in the company itself. Security tokens (STO) are the digital, web3 version of financial securities are regulated by the US SEC just like classic securities."
-    },
-    {
-      question: "Is the UFD token regulated?",
-      answer: "Since 2022-4-22 UFD is also a security token under SEC Reg.D (506)c. What is a security token ?A security token can buy you a stake in the company itself and you will be a shareholder . 2 type of UFD's : Reg D(506)c for US accredited investors only & Reg S for foreigners only with no trade permitted of this type of UFD in the USA. If you which to buy a utility token its still possible but the use is limited to access services and products offered on UFUND Platform and apps only. To get more information on which token to choose for your investment , what's the advantages of each type of token , UFUND investors manager will be happy to give you further details on request , contact : investors@ufund.online."
-    },
-    {
-      question: "Who’s choosing which products and services being offered by UFUND?",
-      answer: "Campaigners listed and passed KYC & AML checks."
-    },
-    {
-      question: "What functions UFD utility token has?",
-      answer: "UFD Token is initially a utility token, sold only for funding transactions and services on UFUND platform and mobile apps. Its price is 20 USD or 8.7 MATIC further prices will be determined by the numbers of transactions inside UFUND platform."
-    },
-    {
-      question: "Who’s using the UFUND product or service?",
-      answer: "Small Mid Size Businesses (SMB's) and Small Mid Size Enterprises (SME's)."
-    },
-    {
-      question: "How secure investments and returns are on UFUND?",
-      answer: "We make use of innovative technologies like blockchain to host tokens sales & purchases of all UFUND platform users. We secure all investors and campaigners fiat funds into regulated third party custody."
-    },
-    {
-      question: "When will be the UFD token listed on exchanges?",
-      answer: "UFD security token will be listed on some security tokens exchanges . Listing is expected in late 2022."
-    },
-    {
-      question: "What makes UFUND unique?",
-      answer: "UFUND creates a decentralized network where Businesses and Investors can meet . Businesses campaigning to benefit from crowdfunding their daily activities , tokenization of their illiquid assets .UFUND allows Businesses to raise the necessary funds without relying on any intermediaries. Investors find alternative opportunities of secure short terms investments."
-    },
-    {
-      question: "Do you have a mobile application?",
-      answer: "With its powerful ERC20 utility token (UFD) issued for an initial fundraising, in order for UFUND to reach its goals. What use UFUND will do with the money raised: marketing our web platform and mobile app, enhance functionalities for users, develop and integrate artificial intelligence, offer more functionalities to enrich user experience, integrate multi-token standards issuance, integrate exchanges and apps continue R&D. UFD utility token can only be used on UFUND Platform to buy access to our company's product or service."
-    },
-    {
-      question: "Where can I get more information?",
-      answer: "If you need more information, you can contact us at: support@ufund.online."
-    },
-    {
-      question: "Accredited investors .Broker dealers .Financial institutions. Wealthy individuals. VC's.Angel investors . Any foreign investors that passes AML /KYC criteria to buy UFD Reg S to trade it only outside the USA.",
-      answer: " Investors , campaigners , and all users of UFUND platform , mobile apps and UFUND , to keep the platform live well maintained, secure and enhanced as required over time."
-    }
-  ];
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      try {
+        setLoading(true); // Start loading
+        const querySnapshot = await getDocs(collection(db, "faqs")); // Firestore query
+        const faqsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setFaqs(faqsData); // Set the data
+        setLoading(false); // End loading
+      } catch (error) {
+        console.error("Error fetching faqs: ", error);
+        setLoading(false); // End loading even if there's an error
+      }
+    };
+
+    fetchFaqs();
+  }, []); // Runs on component mount
+
+  if (loading) return <p>Loading...</p>;
+
+
+  // const accordionItems = [
+  //   {
+  //     question: "Who are the customers or clients paying for these services?",
+  //     answer:
+  //       "Accredited investors .Broker dealers .Financial institutions.Wealthy individuals.VC's.Angel investors . Any foreign investors that passes AML /KYC criteria to buy UFD Reg S to trade it only outside the USA."
+  //   },
+  //   {
+  //     question: "How a business can create a security token and run an STO ( Security Token Offering )",
+  //     answer:
+  //       "There are several ways to do it 1-Use UFUND services from a to Z . 2-Do it yourself under UFUND guide line. Undergo KYC /AML. Get approved. Thereafter start filling the application form. Give your token the required details for the smart & sales contracts. Provide images and asset (s) audit. Thereafter you need to : -Decide what rights the security token will grant the investors. _Choose the jurisdiction to operate in -Choose UFUND as security token issuance platform -Create the token -Run your security token offering -list your security token on UFUND platform or third party exchanges. To know more contact us at : support@ufund.online"
+  //   },
+  //   {
+  //     question: "How does it work?",
+  //     answer:
+  //       "Visit :https://web.ufund.online there is a video explainer : https://youtu.be/GHDYTCVnujE. All you need to do is enroll to create a portfolio as an investor or campaigner."
+  //   },
+  //   {
+  //     question: "What is the difference between a security token and a utility token?",
+  //     answer: "UFD utility token allows owners access to the company's product or services offered on the platform and mobile apps only such as discounts, rewards, or additional benefits to token holders, while a UFD security token entitle owners to hold a stake in the company itself. Security tokens (STO) are the digital, web3 version of financial securities are regulated by the US SEC just like classic securities."
+  //   },
+  //   {
+  //     question: "Is the UFD token regulated?",
+  //     answer: "Since 2022-4-22 UFD is also a security token under SEC Reg.D (506)c. What is a security token ?A security token can buy you a stake in the company itself and you will be a shareholder . 2 type of UFD's : Reg D(506)c for US accredited investors only & Reg S for foreigners only with no trade permitted of this type of UFD in the USA. If you which to buy a utility token its still possible but the use is limited to access services and products offered on UFUND Platform and apps only. To get more information on which token to choose for your investment , what's the advantages of each type of token , UFUND investors manager will be happy to give you further details on request , contact : investors@ufund.online."
+  //   },
+  //   {
+  //     question: "Who’s choosing which products and services being offered by UFUND?",
+  //     answer: "Campaigners listed and passed KYC & AML checks."
+  //   },
+  //   {
+  //     question: "What functions UFD utility token has?",
+  //     answer: "UFD Token is initially a utility token, sold only for funding transactions and services on UFUND platform and mobile apps. Its price is 20 USD or 8.7 MATIC further prices will be determined by the numbers of transactions inside UFUND platform."
+  //   },
+  //   {
+  //     question: "Who’s using the UFUND product or service?",
+  //     answer: "Small Mid Size Businesses (SMB's) and Small Mid Size Enterprises (SME's)."
+  //   },
+  //   {
+  //     question: "How secure investments and returns are on UFUND?",
+  //     answer: "We make use of innovative technologies like blockchain to host tokens sales & purchases of all UFUND platform users. We secure all investors and campaigners fiat funds into regulated third party custody."
+  //   },
+  //   {
+  //     question: "When will be the UFD token listed on exchanges?",
+  //     answer: "UFD security token will be listed on some security tokens exchanges . Listing is expected in late 2022."
+  //   },
+  //   {
+  //     question: "What makes UFUND unique?",
+  //     answer: "UFUND creates a decentralized network where Businesses and Investors can meet . Businesses campaigning to benefit from crowdfunding their daily activities , tokenization of their illiquid assets .UFUND allows Businesses to raise the necessary funds without relying on any intermediaries. Investors find alternative opportunities of secure short terms investments."
+  //   },
+  //   {
+  //     question: "Do you have a mobile application?",
+  //     answer: "With its powerful ERC20 utility token (UFD) issued for an initial fundraising, in order for UFUND to reach its goals. What use UFUND will do with the money raised: marketing our web platform and mobile app, enhance functionalities for users, develop and integrate artificial intelligence, offer more functionalities to enrich user experience, integrate multi-token standards issuance, integrate exchanges and apps continue R&D. UFD utility token can only be used on UFUND Platform to buy access to our company's product or service."
+  //   },
+  //   {
+  //     question: "Where can I get more information?",
+  //     answer: "If you need more information, you can contact us at: support@ufund.online."
+  //   },
+  //   {
+  //     question: "Accredited investors .Broker dealers .Financial institutions. Wealthy individuals. VC's.Angel investors . Any foreign investors that passes AML /KYC criteria to buy UFD Reg S to trade it only outside the USA.",
+  //     answer: " Investors , campaigners , and all users of UFUND platform , mobile apps and UFUND , to keep the platform live well maintained, secure and enhanced as required over time."
+  //   }
+  // ];
 
   return (
     <>
@@ -118,8 +144,8 @@ const FAQ = () => {
           </div>
           <div className="jetboost-list-wrapper-nk2n w-dyn-list">
             <div role="list" className="w-dyn-items">
-              {accordionItems.map((item, index) => (
-                <div key={index} role="listitem" className="w-dyn-item">
+              {faqs.map((faq, index) => (
+                <div key={faq.id} role="listitem" className="w-dyn-item">
                   <div
                     data-w-id="9ccba73f-3e08-1497-62e3-9fb395e2fc21"
                     className="brix---accordion-item-wrapper-v5"
@@ -128,13 +154,14 @@ const FAQ = () => {
                     <div className="brix---accordion-big-number-wrapper">
                       <div className="brix---color-neutral-804">
                         <div className="brix---accordion-big-number">
-                        {String(index + 1).padStart(2, '0')} {/* This adds leading zero */}
+                          {String(index + 1).padStart(2, '0')} {/* This adds leading zero */}
                         </div>
                       </div>
                       <div className="brix---accordion-content-wrapper-v2-3">
                         <div className="brix---accordion-header-3">
                           <div className="brix---color-neutral-804">
-                            <h3 className="brix---accordion-title-5">{item.question}</h3>
+                            <h3 className="brix---accordion-title-5">{faq.faq_question
+                            }</h3>
                           </div>
                         </div>
                         {activeIndex === index && (
@@ -142,7 +169,7 @@ const FAQ = () => {
                             <div className="brix---accordion-spacer-3" />
                             <div className="brix---paragraph-default-7">
                               <div className="brix---color-neutral-803">
-                                <p className="brix---mg-bottom-0">{item.answer}</p>
+                                <p className="brix---mg-bottom-0">{faq.faq_answer}</p>
                               </div>
                             </div>
                           </div>

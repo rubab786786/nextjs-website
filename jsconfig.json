@@ -1,7 +1,16 @@
 {
   "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@/data": ["data/index"],
+      "@/components/*": ["components/*"],
+      "@/context/*": ["context/*"],
+      // "@/css/*": ["public/assets/css/*"],
+      // "@/images/*": ["public/assets/images/*"],
+      "@lib/*": ["lib/*"],
+      // "@styles/*": ["styles/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

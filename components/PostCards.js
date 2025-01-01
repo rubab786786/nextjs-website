@@ -52,7 +52,7 @@ const PostCards = ({heading,image,date,link}) => {
                                     </div>
                                     <h1 className="heading-48" aria-hidden="true">{heading}</h1>
                                     <Link
-                                        href="#"
+                                        href={link}
                                         className="new-button-blog spark-icon-left-button next w-inline-block"
                                         aria-hidden="true"
                                         aria-current="page"
