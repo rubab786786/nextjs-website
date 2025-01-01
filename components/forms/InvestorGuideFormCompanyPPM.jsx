@@ -1,13 +1,13 @@
 import React, { useState, useCallback, useEffect } from "react";
 import axios from "axios";
-import {
-  TextField,
-  Button,
-  CircularProgress,
-  Typography,
-  Grid,
-  Box,
-} from "@mui/material";
+// import {
+//   TextField,
+//   Button,
+//   CircularProgress,
+//   Typography,
+//   Grid,
+//   Box,
+// } from "@mui/material";
 import Image from "next/image";
 
 export function InvestorGuideFormCompany({ authToken, isNewUser, setFormProgress }) {

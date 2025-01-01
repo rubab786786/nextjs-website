@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Grid, Typography } from "@mui/material";
+// import { Box, Button, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 import { InvestorGuideFormCompany } from "./InvestorGuideFormCompany";
