@@ -38,7 +38,7 @@ const InvestorGuide = () => {
       <NavbarSection />
       <section id="hero" className="section-guide">
         <div className="w-layout-blockcontainer container-guide w-container">
-          <h1 className="heading-guide">Investor guide</h1>
+          <h1 className="heading-guide">Investor guidee</h1>
           <Link href="#" className="button w-button">
             Home - Investor Guide
           </Link>
