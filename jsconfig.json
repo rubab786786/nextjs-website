@@ -8,7 +8,7 @@
       "@/context/*": ["context/*"],
       // "@/css/*": ["public/assets/css/*"],
       // "@/images/*": ["public/assets/images/*"],
-      "@lib/*": ["lib/*"],
+      "@lib/*": ["lib/utils*"],
       // "@styles/*": ["styles/*"]
     }
   },
