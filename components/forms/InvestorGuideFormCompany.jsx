@@ -10,7 +10,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { ValidateEmail } from "@lib/utils";
+import { ValidateEmail } from "../../lib/utils";
 import axios from "axios";
 import countries from "data/countries";
 

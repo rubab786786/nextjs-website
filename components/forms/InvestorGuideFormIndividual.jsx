@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { ValidateEmail } from "@lib/utils";
+import { ValidateEmail } from "../../lib/utils";
 import countries from "data/countries";
 import { useInvestorGuideFormForIndividual } from "hooks";
 
