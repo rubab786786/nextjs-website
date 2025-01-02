@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { isUserExists, isUserUUIDExists, verifyUserUUIDAndEmail } from '@lib/firebaseActions'
+import { isUserExists, isUserUUIDExists, verifyUserUUIDAndEmail } from '../../../../../lib/firebaseActions'
 
 
 

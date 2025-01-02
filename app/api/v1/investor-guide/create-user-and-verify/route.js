@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { createUserInCRM, isUserExists } from '@lib/firebaseActions'
-import { sendVerificationEmailWithSMTP } from '@lib/mailgunActions'
+import { createUserInCRM, isUserExists } from '../../../../../lib/firebaseActions'
+import { sendVerificationEmailWithSMTP } from '../../../../../lib/mailgunActions'
 
 
 
