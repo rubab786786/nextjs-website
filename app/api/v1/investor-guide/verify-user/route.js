@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getUserInCRMByEmail, isEmailVerifiedUserCRM, isUserExists } from '@lib/firebaseActions';
+import { getUserInCRMByEmail, isEmailVerifiedUserCRM, isUserExists } from '../../../../../lib/firebaseActions';
 
 /**
  * Handles a POST request to verify a user's email.
