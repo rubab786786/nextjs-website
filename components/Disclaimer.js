@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Disclaimer = () => {
   return (
     <>
-    <NavbarSection/>
+    {/* <NavbarSection/> */}
     <section className="section-disc">
     <div className="w-layout-blockcontainer container-disc w-container">
       <h1 className="heading-terms">Disclaimer</h1>
@@ -62,7 +62,7 @@ const Disclaimer = () => {
     </div>
   </section>
     <JoinSection heading="Start your journey today"/>
-    <FooterSection/>
+    {/* <FooterSection/> */}
     </>
   )
 }

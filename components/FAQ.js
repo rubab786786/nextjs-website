@@ -102,7 +102,7 @@ const FAQ = () => {
 
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-faq">
         <div className="w-layout-blockcontainer container-faq w-container">
           <h1 className="heading-guide">Frequently asked questions</h1>
@@ -244,7 +244,7 @@ const FAQ = () => {
       </section>
       <JoinSection heading="Buy UFD tokens" />
       <UuiSection />
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

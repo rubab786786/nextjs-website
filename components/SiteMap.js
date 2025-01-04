@@ -7,7 +7,7 @@ import Link from 'next/link'
 const SiteMap = () => {
   return (
     <>
-    <NavbarSection/>
+    {/* <NavbarSection/> */}
     <section id="hero" className="section-7">
     <div className="w-layout-blockcontainer container-9 w-container">
       <h1 className="heading-map">Site Map</h1>
@@ -334,7 +334,7 @@ const SiteMap = () => {
     </div>
   </section>
     <JoinSection heading="Start your journey today"/>
-    <FooterSection/>
+    {/* <FooterSection/> */}
     </>
   )
 }

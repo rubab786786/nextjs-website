@@ -72,7 +72,7 @@ const PostContentPage = () => {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <section className="section-blog-in">
                 <div className="w-layout-blockcontainer container-blog-in w-container">
                     <h1 className="heading-23">Blog archive</h1>
@@ -118,7 +118,7 @@ const PostContentPage = () => {
             <BlogFaq/>
             <BlogCarousel/>
             <JoinSection heading="Start your journey today"/>
-            <FooterSection/>
+            {/* <FooterSection/> */}
         </>
     );
 };

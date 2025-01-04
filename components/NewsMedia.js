@@ -34,7 +34,7 @@ const NewsMedia = () => {
   
   return (
     <>
-    <NavbarSection/>
+    {/* <NavbarSection/> */}
     <section id="hero" className="section-news">
     <div className="w-layout-blockcontainer container-news w-container">
       <h1 className="heading-n">News &amp; Media</h1>
@@ -269,7 +269,7 @@ const NewsMedia = () => {
   </section>
     <UuiSection/>
     <JoinSection heading="Start your journey today"/>
-    <FooterSection/>
+    {/* <FooterSection/> */}
     </>
   )
 }

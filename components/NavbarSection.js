@@ -1,8 +1,9 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import buyToken from "../app/buy-token";
 
 const Navbar = () => {
   const router = useRouter();
@@ -32,9 +33,20 @@ const Navbar = () => {
   };
 
   const isActive = (path) => router.pathname === path;
+  const dialogRef = useRef(null);
+  const onBuyToken = () => {
+    const { current: { handleOpen } } = dialogRef
+    handleOpen(true)
+  }
+
+  const BuyToken = buyToken;
+
 
   return (
     <>
+    <BuyToken
+        ref={dialogRef}
+      />
       {isPopupOpen && (
         <section id="anchor-scroll" className="pop-section-1">
           <div className="pop-up-div">
@@ -230,8 +242,8 @@ const Navbar = () => {
                 </button>
 
                 <div className="btn-header-hidden-on-mbl">
-                  <Link
-                    href="https://www.tokensales.ufund.online/"
+                  <button
+                    onClick={onBuyToken}
                     data-w-id="5951afa9-511e-d27d-ce27-04ac94802e78"
                     className="flex justify-center items-center bg-gradient-to-r from-[#841524] to-[#e83a3d] text-white hover:bg-gradient-to-l transition duration-300"
                     style={{ color: "white", borderRadius: "4px", padding: "18px 40px" }}
@@ -261,7 +273,7 @@ const Navbar = () => {
                     </div> */}
                     <img src='/images/Lock.png' className='mr-2' />
                     <p className="paragraph-5">Buy UFD tokens</p>
-                  </Link>
+                  </button>
                   {/* <a
                     href="https://webapp.ufund.online/login"
                     target="_blank"

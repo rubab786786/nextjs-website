@@ -1,4 +1,8 @@
 import './globals.css'
+import { StoreProvider } from "@/context/store-provider";
+import NavbarSection from "@/components/NavbarSection";
+import FooterSection from "@/components/FooterSection";
+
 
 export const metadata = {
   title: "New Home",
@@ -28,7 +32,13 @@ export default function RootLayout({ children }) {
         <link href="/images/favicon.jpg" rel="shortcut icon" type="image/x-icon" />
         <link href="/images/webclip.jpg" rel="apple-touch-icon" />
       </head>
-      <body>{children}</body>
+      <body>
+        <StoreProvider>
+          <NavbarSection />
+          {children}
+          <FooterSection />
+        </StoreProvider>
+      </body>
     </html>
   );
 }

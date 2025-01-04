@@ -7,7 +7,7 @@ import Link from 'next/link'
 const Search = () => {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <section className="section-search-result">
     <div className="w-layout-blockcontainer container-search w-container">
       <h1 className="heading-search-1">Search Result</h1>
@@ -26,7 +26,7 @@ const Search = () => {
     </div>
   </section>
   <JoinSection heading="Start your journey today"/>
-  <FooterSection/>
+  {/* <FooterSection/> */}
     </>
   )
 }

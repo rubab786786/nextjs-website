@@ -60,7 +60,7 @@ const Resources = () => {
 
   return (
     <>
-    <NavbarSection/>
+    {/* <NavbarSection/> */}
     <section id="hero" className="section-15">
     <div className="w-layout-blockcontainer container-18 w-container">
       <h1 className="heading-23">Resources | UFUND </h1>
@@ -202,7 +202,7 @@ const Resources = () => {
   </section>
   <UuiSection/>
   <JoinSection heading="Start your journey today"/>
-  <FooterSection/>
+  {/* <FooterSection/> */}
   </>
   )
 }

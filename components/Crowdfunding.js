@@ -59,7 +59,7 @@ const Crowdfunding = () => {
 
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-in">
         <div className="w-layout-blockcontainer container-in w-container">
           <h1 className="heading-in1">Businesses</h1>
@@ -270,7 +270,7 @@ const Crowdfunding = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

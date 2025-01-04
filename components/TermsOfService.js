@@ -8,7 +8,7 @@ import Link from 'next/link'
 const TermsOfService = () => {
   return (
     <>
-    <NavbarSection/>
+    {/* <NavbarSection/> */}
     <section id="hero" className="section-terms">
     <div className="w-layout-blockcontainer container-terms w-container">
       <h1 className="heading-terms">Terms of services</h1>
@@ -1161,7 +1161,7 @@ const TermsOfService = () => {
   </section>
     <UuiSection/>
     <JoinSection heading="Start your journey today"/>
-    <FooterSection/>
+    {/* <FooterSection/> */}
     </>
   )
 }

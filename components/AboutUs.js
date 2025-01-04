@@ -16,7 +16,7 @@ const arrowImageStyles = {
 const AboutUs = () => {
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-7">
         <div className="w-layout-blockcontainer container-9 w-container">
           <h1 className="heading-23">About UFUND</h1>
@@ -456,7 +456,7 @@ const AboutUs = () => {
       </section>
       <TeamAboutSection/>
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
       <UuiSection />
     </>
   )

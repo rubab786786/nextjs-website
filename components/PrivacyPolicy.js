@@ -8,7 +8,7 @@ import Link from 'next/link'
 const PrivacyPolicy = () => {
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-privacy">
         <div className="w-layout-blockcontainer container-privacy w-container">
           <h1 className="heading-terms">Privacy Policy</h1>
@@ -1749,7 +1749,7 @@ const PrivacyPolicy = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

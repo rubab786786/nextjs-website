@@ -64,7 +64,7 @@ const InnovativeInvestment = () => {
 
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-in">
         <div className="w-layout-blockcontainer container-inv w-container">
           <h1 className="heading-inv">
@@ -353,7 +353,7 @@ const InnovativeInvestment = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

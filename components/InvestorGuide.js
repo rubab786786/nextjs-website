@@ -35,7 +35,7 @@ const InvestorGuide = () => {
 
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-guide">
         <div className="w-layout-blockcontainer container-guide w-container">
           <h1 className="heading-guide">Investor guidee</h1>
@@ -198,7 +198,7 @@ const InvestorGuide = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today" />
-      <FooterSection />
+      {/* <FooterSection /> */}
       {/* Modals */}
       <RegulationDModal isVisible={showRegDModal} handleClose={handleCloseModal} modalName="regD" />
       <RegulationSModal isVisible={showRegSModal} handleClose={handleCloseModal} modalName="regS" />

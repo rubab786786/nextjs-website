@@ -85,7 +85,7 @@ const Blogs = () => {
   return (
     <>
 
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-blog">
         <div className="w-layout-blockcontainer container-blog w-container">
           <h1 className="heading-blog">Blog archive</h1>
@@ -305,7 +305,7 @@ const Blogs = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today" />
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

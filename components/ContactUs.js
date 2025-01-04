@@ -20,7 +20,7 @@ const ContactUs = () => {
   }, []);
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section className="section-contact">
         <div className="w-layout-blockcontainer container-contact w-container">
           <h1 className="heading-contact">Contact Us</h1>
@@ -540,7 +540,7 @@ const ContactUs = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }

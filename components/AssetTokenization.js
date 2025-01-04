@@ -67,7 +67,7 @@ const AssetTokenization = () => {
   ];
   return (
     <>
-      <NavbarSection />
+      {/* <NavbarSection /> */}
       <section id="hero" className="section-in">
         <div className="w-layout-blockcontainer container-i w-container">
           <h1 className="heading-i">Assets</h1>
@@ -386,7 +386,7 @@ const AssetTokenization = () => {
       </section>
       <UuiSection />
       <JoinSection heading="Start your journey today"/>
-      <FooterSection />
+      {/* <FooterSection /> */}
     </>
   )
 }
